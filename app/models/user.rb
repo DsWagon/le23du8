@@ -4,8 +4,8 @@ class User < ApplicationRecord
 
   has_many :flats, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
+  has_many :meetings
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
 end

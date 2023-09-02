@@ -31,4 +31,19 @@ syndic = Syndic.create!(
   phone: "0145678901"
 )
 
+meeting1 = Meeting.create!(
+  title: "ordre du jour 1",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  date: "2021-09-02",
+  syndic: syndic
+)
+
+meeting2 = Meeting.create!(
+  title: "ordre du jour 2",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  date: "2022-01-02",
+  syndic: syndic
+)
+
+
 puts "Finished!"
