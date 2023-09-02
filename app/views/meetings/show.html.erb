@@ -7,4 +7,22 @@
   <p><%= @meeting.date %></p>
   <p><%= @meeting.syndic.name %></p>
 
+<h1>Commentaires</h1>
+<p><%= @meeting.comments.count %></p>
+<% @meeting.comments.each do |comment| %>
+  <p><%= comment.user.first_name %></p>
+  <p><%= comment.content %></p>
+<% end %>
+
+<%= simple_form_for [@meeting, @comment] do |f| %>
+  <%= f.input :content, as: :text, label: "écrivez votre commentaire" %>
+  <%= f.button :submit, value: "Envoyer" %>
+<% end %>
+
+
+
+
+
+
+
   go back to meetings index page <%= link_to 'Back', meetings_path %>

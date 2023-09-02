@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-puts "Creating users, flats and syndics..."
+puts "Creating users, flats and syndics and meetings and comments..."
 
 david = User.create!(
   email: "davidlog@gmail.com",
@@ -43,6 +43,18 @@ meeting2 = Meeting.create!(
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   date: "2022-01-02",
   syndic: syndic
+)
+
+comment1 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  meeting: meeting1
+)
+
+comment2 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  meeting: meeting2
 )
 
 
