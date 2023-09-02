@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @user_flat = Flat.find_by(user_id: @current_user.id)
-    
+    @syndic = Syndic.first
+
   end
 end

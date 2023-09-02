@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
+puts "Creating users, flats and syndics..."
+
 david = User.create!(
   email: "davidlog@gmail.com",
   password: "azerty",
@@ -20,3 +22,13 @@ flat = Flat.create!(
   surface: 80,
   lot: 12
 )
+
+syndic = Syndic.create!(
+  name: "Balma gestion",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  address: "14 rue de la cloche percee, 75010 Paris",
+  email: "Balmagestion@gmail.com",
+  phone: "0145678901"
+)
+
+puts "Finished!"
