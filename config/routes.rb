@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   get "profile", to: "pages#profile"
-  
+
   resources :meetings, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end
 
-  resources :companies, only: [:new, :create] do
+  resources :quotes, only: [:new, :create] do
     resources :comments, only: [:new, :create]
   end
 
