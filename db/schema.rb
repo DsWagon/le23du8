@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_02_174036) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_02_182452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_174036) do
     t.index ["syndic_id"], name: "index_meetings_on_syndic_id"
   end
 
+  create_table "quotes", force: :cascade do |t|
+    t.text "company_name"
+    t.text "description"
+    t.integer "price"
+    t.date "date_start"
+    t.date "date_end"
+    t.bigint "meeting_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meeting_id"], name: "index_quotes_on_meeting_id"
+  end
+
   create_table "syndics", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -72,4 +84,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_174036) do
   add_foreign_key "comments", "users"
   add_foreign_key "flats", "users"
   add_foreign_key "meetings", "syndics"
+  add_foreign_key "quotes", "meetings"
 end

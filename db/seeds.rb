@@ -57,19 +57,6 @@ comment2 = Comment.create!(
   meeting: meeting2
 )
 
-
-comment3 = Comment.create!(
-  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  user: david,
-  quote: quote1
-)
-
-comment4 = Comment.create!(
-  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  user: david,
-  quote: quote2
-)
-
 quote1 = Quote.create!(
   company_name: "entreprise 1",
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
