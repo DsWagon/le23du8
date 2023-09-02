@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+david = User.create!(
+  email: "davidlog@gmail.com",
+  password: "azerty",
+  first_name: "David",
+  last_name: "Log"
+)
+
+flat = Flat.create!(
+  user: david,
+  floor: 3,
+  surface: 80,
+  lot: 12
+)

@@ -96,6 +96,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    cicero (0.0.1)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -114,6 +115,8 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
+    faker (3.2.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
@@ -269,9 +272,11 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2)
   capybara
+  cicero
   debug
   devise
   dotenv-rails
+  faker
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder

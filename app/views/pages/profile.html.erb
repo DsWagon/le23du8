@@ -1,0 +1,18 @@
+<h1>Pages#profile</h1>
+<p>Find me in app/views/pages/profile.html.erb</p>
+
+  <h2>Informations sur le logement :</h2>
+
+<p><%= @user.first_name %></p>
+<p><%= @user.last_name %></p>
+<p><%= @user.email %></p>
+
+
+<% if @user_flat.present? %>
+  <h2>Informations sur le logement :</h2>
+  <p>Étage : <%= @user_flat.floor %></p>
+  <p>Surface : <%= @user_flat.surface %></p>
+  <p>Numéro de lot : <%= @user_flat.lot %></p>
+<% else %>
+  <p>L'utilisateur n'a pas encore de logement associé.</p>
+<% end %>
