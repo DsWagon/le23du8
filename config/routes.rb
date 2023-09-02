@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'quotes/index'
+  get 'quotes/show'
   devise_for :users
   root to: "pages#home"
   get "about", to: "pages#about"
