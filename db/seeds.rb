@@ -75,5 +75,17 @@ quote2 = Quote.create!(
   meeting: meeting2
 )
 
+commentquote = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  quote: quote1
+)
+
+commentquote2 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  quote: quote2
+)
+
 
 puts "Finished!"

@@ -1,2 +1,24 @@
 <h1>Quotes#show</h1>
 <p>Find me in app/views/quotes/show.html.erb</p>
+
+<h1>Show quote</h1>
+
+  <p><%= @quote.company_name %></p>
+  <p><%= @quote.description %></p>
+  <p><%= @quote.price %></p>
+  <p><%= @quote.date_start %></p>
+  <p><%= @quote.date_end %></p>
+  <p><%= @quote.meeting.title%></p>
+
+
+<h1>Commentaires</h1>
+<p><%= @quote.comments.count %></p>
+<% @quote.comments.each do |comment| %>
+  <p><%= comment.user.first_name %></p>
+  <p><%= comment.content %></p>
+<% end %>
+
+<%= simple_form_for [@quote, @comment] do |f| %>
+  <%= f.input :content, as: :text, label: "écrivez votre commentaire" %>
+  <%= f.button :submit, value: "Envoyer" %>
+<% end %>

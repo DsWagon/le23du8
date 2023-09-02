@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_185738) do
     t.bigint "meeting_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "quote_id"
+    t.bigint "quote_id", null: false
     t.index ["meeting_id"], name: "index_comments_on_meeting_id"
     t.index ["quote_id"], name: "index_comments_on_quote_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
