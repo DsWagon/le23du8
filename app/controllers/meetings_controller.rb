@@ -1,5 +1,5 @@
 class MeetingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [ :index, :show]
 
   def index
     @meetings = Meeting.all

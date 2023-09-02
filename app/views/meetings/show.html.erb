@@ -1,0 +1,10 @@
+
+
+<h1>Show meeting</h1>
+
+  <p><%= @meeting.title %></p>
+  <p><%= @meeting.description %></p>
+  <p><%= @meeting.date %></p>
+  <p><%= @meeting.syndic.name %></p>
+
+  go back to meetings index page <%= link_to 'Back', meetings_path %>
