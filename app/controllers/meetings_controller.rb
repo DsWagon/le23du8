@@ -1,5 +1,8 @@
 class MeetingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show]
+
   def index
+    @meetings = Meeting.all
   end
 
   def new
@@ -9,5 +12,6 @@ class MeetingsController < ApplicationController
   end
 
   def show
+    @meeting = Meeting.find(params[:id])
   end
 end

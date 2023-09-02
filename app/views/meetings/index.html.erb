@@ -1,0 +1,10 @@
+<h1>Meeting#index</h1> <p>Find me in app/views/meetings</p>
+
+
+<% @meetings.each do |meeting| %>
+  <p><%= meeting.title %></p>
+  <p><%= meeting.description %></p>
+  <p><%= meeting.date %></p>
+  <p><%= meeting.syndic.name %></p>
+  <p><%= link_to 'Show', meeting %></p>
+  <% end %>
