@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
-  resources :quotes, only: [:new, :create] do
+  resources :quotes, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end
 

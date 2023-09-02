@@ -58,5 +58,35 @@ comment2 = Comment.create!(
 )
 
 
+comment3 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  quote: quote1
+)
+
+comment4 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  quote: quote2
+)
+
+quote1 = Quote.create!(
+  company_name: "entreprise 1",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  price: 1000,
+  date_start: "2021-09-02",
+  date_end: "2021-10-02",
+  meeting: meeting1
+)
+
+quote2 = Quote.create!(
+  company_name: "entreprise 2",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  price: 10000,
+  date_start: "2022-09-02",
+  date_end: "2022-09-02",
+  meeting: meeting2
+)
+
 
 puts "Finished!"
