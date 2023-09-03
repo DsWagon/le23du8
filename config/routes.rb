@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
+  get 'quotes/index'
+  get 'quotes/show'
   devise_for :users
   root to: "pages#home"
   get "about", to: "pages#about"
   get "profile", to: "pages#profile"
-  
+
   resources :meetings, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end
 
-  resources :companies, only: [:new, :create] do
+  resources :quotes, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end
 

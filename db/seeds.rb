@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-puts "Creating users, flats and syndics and meetings and comments..."
+puts "Creating users, flats and syndics and meetings and comments, and quotes..."
 
 david = User.create!(
   email: "davidlog@gmail.com",
@@ -45,6 +45,25 @@ meeting2 = Meeting.create!(
   syndic: syndic
 )
 
+
+quote1 = Quote.create!(
+  company_name: "entreprise 1",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  price: 1000,
+  date_start: "2021-09-02",
+  date_end: "2021-10-02",
+  meeting: meeting1
+)
+
+quote2 = Quote.create!(
+  company_name: "entreprise 2",
+  description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  price: 10000,
+  date_start: "2022-09-02",
+  date_end: "2022-09-02",
+  meeting: meeting2
+)
+
 comment1 = Comment.create!(
   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   user: david,
@@ -56,6 +75,8 @@ comment2 = Comment.create!(
   user: david,
   meeting: meeting2
 )
+
+
 
 
 puts "Finished!"
