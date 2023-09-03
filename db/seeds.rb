@@ -45,17 +45,6 @@ meeting2 = Meeting.create!(
   syndic: syndic
 )
 
-comment1 = Comment.create!(
-  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  user: david,
-  meeting: meeting1
-)
-
-comment2 = Comment.create!(
-  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  user: david,
-  meeting: meeting2
-)
 
 quote1 = Quote.create!(
   company_name: "entreprise 1",
@@ -72,6 +61,18 @@ quote2 = Quote.create!(
   price: 10000,
   date_start: "2022-09-02",
   date_end: "2022-09-02",
+  meeting: meeting2
+)
+
+comment1 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
+  meeting: meeting1
+)
+
+comment2 = Comment.create!(
+  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+  user: david,
   meeting: meeting2
 )
 
