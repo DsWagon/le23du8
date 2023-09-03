@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :quotes, only: [:index, :show] do
-    resources :comments, only: [:new, :create]
   end
 
 
