@@ -1,26 +1,36 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<div class="container">
+  <h1>Votre profile</h1>
+  <p>Find me in app/views/pages/profile.html.erb</p>
 
-  <h2>Informations sur le logement :</h2>
+  <div class="card">
+    <h2>Informations sur vous :</h2>
+    <p><%= @user.first_name %></p>
+    <p><%= @user.last_name %></p>
+    <p><%= @user.email %></p>
+  </div>
 
-<p><%= @user.first_name %></p>
-<p><%= @user.last_name %></p>
-<p><%= @user.email %></p>
+  <div class="card">
+      <h5 class="card-title">Informations sur votre logement :</h5>
+      <div class="card-text-primary">
+        <% if @user_flat.present? %>
+          <p>Étage : <%= @user_flat.floor %></p>
+          <p>Surface : <%= @user_flat.surface %></p>
+          <p>Numéro de lot : <%= @user_flat.lot %></p>
+        <% else %>
+          <p>L'utilisateur n'a pas encore de logement associé.</p>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="card">
+    <h2>Informations sur votre syndic :</h2>
+    <p><%= @syndic.name %></p>
+    <p><%= @syndic.description %></p>
+    <p><%= @syndic.address %></p>
+    <p><%= @syndic.phone %></p>
+    <p><%= @syndic.email %></p>
+  </div>
 
 
-<% if @user_flat.present? %>
-  <h2>Informations sur le logement :</h2>
-  <p>Étage : <%= @user_flat.floor %></p>
-  <p>Surface : <%= @user_flat.surface %></p>
-  <p>Numéro de lot : <%= @user_flat.lot %></p>
-<% else %>
-  <p>L'utilisateur n'a pas encore de logement associé.</p>
-<% end %>
 
-  <h2>Votre syndic :</h2>
-
-<p><%= @syndic.name %></p>
-<p><%= @syndic.description %></p>
-<p><%= @syndic.address %></p>
-<p><%= @syndic.phone %></p>
-<p><%= @syndic.email %></p>
+</div>
