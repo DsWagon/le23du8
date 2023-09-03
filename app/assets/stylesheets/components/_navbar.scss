@@ -9,4 +9,17 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  
 }
+
+.navbar-title {
+
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgb(128, 158, 173)
+}
+
+.navbar-collapse {
+          display: flex !important; // stylelint-disable-line declaration-no-important
+          flex-basis: auto;
+        }
