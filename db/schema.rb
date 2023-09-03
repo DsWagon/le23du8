@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_02_185738) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_02_182452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,9 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_185738) do
     t.bigint "meeting_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "quote_id", null: false
     t.index ["meeting_id"], name: "index_comments_on_meeting_id"
-    t.index ["quote_id"], name: "index_comments_on_quote_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -83,7 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_185738) do
   end
 
   add_foreign_key "comments", "meetings"
-  add_foreign_key "comments", "quotes"
   add_foreign_key "comments", "users"
   add_foreign_key "flats", "users"
   add_foreign_key "meetings", "syndics"
