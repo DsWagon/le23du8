@@ -1,36 +1,69 @@
 <div class="container">
-  <h1>Votre profile</h1>
-  <p>Find me in app/views/pages/profile.html.erb</p>
 
   <div class="card">
-    <h2>Informations sur vous :</h2>
-    <p><%= @user.first_name %></p>
-    <p><%= @user.last_name %></p>
-    <p><%= @user.email %></p>
-  </div>
-
-  <div class="card">
-      <h5 class="card-title">Informations sur votre logement :</h5>
-      <div class="card-text-primary">
-        <% if @user_flat.present? %>
-          <p>Étage : <%= @user_flat.floor %></p>
-          <p>Surface : <%= @user_flat.surface %></p>
-          <p>Numéro de lot : <%= @user_flat.lot %></p>
-        <% else %>
-          <p>L'utilisateur n'a pas encore de logement associé.</p>
-        <% end %>
+    <h5 class="card-header">Informations personnelles :</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 ">
+          <div>
+            <p>Prénom : <%= @user.first_name %></p>
+            <p>Nom : <%= @user.last_name %></p>
+            <p>E-mail : <%= @user.email %></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="d-flex align-items-center justify-content-center h-100">
+              <%= link_to "Modifier", "/meetings", class: "btn btn-flat btn-login" %>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Informations sur votre syndic :</h2>
-    <p><%= @syndic.name %></p>
-    <p><%= @syndic.description %></p>
-    <p><%= @syndic.address %></p>
-    <p><%= @syndic.phone %></p>
-    <p><%= @syndic.email %></p>
+    <h5 class="card-header">Informations sur votre logement :</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 ">
+          <div>
+            <% if @user_flat.present? %>
+              <p>Étage : <%= @user_flat.floor %></p>
+              <p>Surface : <%= @user_flat.surface %></p>
+              <p>Numéro de lot : <%= @user_flat.lot %></p>
+            <% else %>
+              <p>L'utilisateur n'a pas encore de logement associé.</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="d-flex align-items-center justify-content-center h-100">
+              <%= link_to "Modifier", "/meetings", class: "btn btn-flat btn-login" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-
+    <div class="card">
+    <h5 class="card-header">Informations personnelles :</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 ">
+          <div>
+            <p><%= @syndic.name %></p>
+            <p>Description : <%= @syndic.description %></p>
+            <p>Adresse : <%= @syndic.address %></p>
+            <p>Téléphone : <%= @syndic.phone %></p>
+            <p>E-mail : <%= @syndic.email %></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="d-flex align-items-center justify-content-center h-100">
+              <%= link_to "Modifier", "/meetings", class: "btn btn-flat btn-login" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>

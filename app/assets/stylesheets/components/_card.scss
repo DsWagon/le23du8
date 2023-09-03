@@ -1,0 +1,19 @@
+.card {
+  border-radius: 4px;
+  border: 1px solid rgb( 53, 154, 157);
+  margin: 20px;
+  background-color: rgb( 165, 220, 224);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  color: grey;
+}
+
+.card-header {
+  background-color: rgb( 53, 154, 157);
+  color: white;
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 10px;
+  font-size: large;
+}
