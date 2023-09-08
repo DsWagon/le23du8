@@ -74,8 +74,20 @@ comment2 = Comment.create!(
   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   user: david,
   meeting: meeting2
+
 )
 
+# comment3 = Comment.create!(
+#   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+#   user: david,
+#   quote: quote1
+# )
+
+# comment4 = Comment.create!(
+#   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+#   user: david,
+#   quote: quote2
+# )
 
 
 

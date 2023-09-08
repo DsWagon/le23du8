@@ -13,4 +13,5 @@ class PagesController < ApplicationController
     @syndic = Syndic.first
 
   end
+  
 end

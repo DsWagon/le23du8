@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def create_comment_meeting
+  def create
     @meeting = Meeting.find(params[:meeting_id])
     @comment = Comment.new(comment_params)
     @comment.meeting = @meeting

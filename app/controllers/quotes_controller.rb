@@ -7,5 +7,6 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
+    @comment = Comment.new
   end
 end
