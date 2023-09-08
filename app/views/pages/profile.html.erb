@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-6 col-sm-6">
           <div class="d-flex align-items-center justify-content-center h-100">
-            <%= link_to "Modifier", "/meetings", class: "btn btn-flat btn-login" %>
+            <%= link_to "Modifier", edit_user_registration_path, class: "btn btn-flat btn-login" %>
           </div>
         </div>
       </div>
@@ -35,14 +35,14 @@
         </div>
         <div class="col-md-6 col-sm-6">
           <div class="d-flex align-items-center justify-content-center h-100">
-            <%= link_to "Modifier", "/meetings", class: "btn btn-flat btn-login" %>
+            <%= link_to "Modifier", edit_flat_path(@user_flat), class: "btn btn-flat btn-login" %>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="card">
-    <h5 class="card-header">Informations personnelles :</h5>
+    <h5 class="card-header">Contacter votre syndic :</h5>
     <div class="card-body">
       <div class="row">
         <div class="col-md-6 col-sm-6 ">
@@ -56,10 +56,8 @@
         </div>
         <div class="col-md-6 col-sm-6">
           <div class="d-flex align-items-center justify-content-center h-100">
-            <%= link_to "Modifier", "/meetings", class: "btn btn-flat btn-login" %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

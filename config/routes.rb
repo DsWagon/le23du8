@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
+  resources :flats, only: [:edit, :update] do
+  end
   resources :quotes, only: [:index, :show] do
   end
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

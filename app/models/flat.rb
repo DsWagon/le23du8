@@ -4,4 +4,5 @@ class Flat < ApplicationRecord
   validates :floor, presence: true
   validates :surface, presence: true
   validates :lot, presence: true
+  
 end

@@ -1,2 +1,3 @@
 class SyndicsController < ApplicationController
+
 end
