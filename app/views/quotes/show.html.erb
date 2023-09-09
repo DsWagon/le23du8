@@ -1,12 +1,21 @@
-<h1>Quotes#show</h1>
-<p>Find me in app/views/quotes/show.html.erb</p>
-
-<h1>Show quote</h1>
-
-  <p><%= @quote.company_name %></p>
-  <p><%= @quote.description %></p>
-  <p><%= @quote.price %></p>
-  <p><%= @quote.date_start %></p>
-  <p><%= @quote.date_end %></p>
-  <p><%= @quote.meeting.title%></p>
-
+<div class="container">
+  <h1>Show de la quote</h1>
+  <div class="row">
+    <div class="col-md-12 mb-12">
+      <div class="card">
+        <div class="card-header"><%= @quote.meeting.title%>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= @quote.company_name %></p>
+          <p class="card-text"><%= @quote.description %></p>
+          <p><%= @quote.price %></p>
+          <p><%= @quote.date_start %></p>
+          <p><%= @quote.date_end %></p>
+          <p><%= @quote.meeting.title%></p>
+          <%= link_to 'Voir les devis', quotes_path, class: 'btn btn-primary' %>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

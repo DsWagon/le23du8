@@ -1,23 +1,35 @@
-
-<div class="container devise-container">
-  <div class="row justify-content-center">
-    <h1>Show meeting</h1>
-    <p><%= @meeting.title %></p>
-    <p><%= @meeting.description %></p>
-    <p><%= @meeting.date %></p>
-    <p><%= @meeting.syndic.name %></p>
-    <h1>Commentaires</h1>
-    <p><%= @meeting.comments.count %></p>
-    <% @meeting.comments.each do |comment| %>
-      <p><%= comment.user.first_name %></p>
-      <p><%= comment.content %></p>
-    <% end %>
-    <%= simple_form_for [@meeting, @comment] do |f| %>
-      <%= f.input :content, as: :text, label: "écrivez votre commentaire" %>
-      <%= f.button :submit, value: "Envoyer" %>
-    <% end %>
+<div class="container">
+  <h1>Show de la réunion</h1>
+  <div class="row">
+    <div class="col-md-12 mb-12">
+      <div class="card">
+        <div class="card-header"><%= @meeting.title %>, <%= @meeting.date %>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Syndic : <%= @meeting.syndic.name %></p>
+          <p class="card-text"><%= @meeting.description %></p>
+          <%= link_to 'Voir les devis', quotes_path, class: 'btn btn-primary' %>
+          <hr>
+          <h1>Commentaires</h1>
+          <p><%= @meeting.comments.count %></p>
+          <% @meeting.comments.each do |comment| %>
+            <p><%= comment.user.first_name %></p>
+            <p><%= comment.content %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 mb-12">
+    <div class="card">
+      <%= simple_form_for [@meeting, @comment] do |f| %>
+        <%= f.input :content, as: :text, label: "Écrivez votre commentaire" %>
+        <%= f.button :submit, value: "Envoyer", class: 'btn-btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-
-  go back to meetings index page <%= link_to 'Back', meetings_path %>
+<%# <%= link_to 'Back', meetings_path %>
