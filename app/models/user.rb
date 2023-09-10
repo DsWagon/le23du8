@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :flats, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
 
-  enum role: [:user, :vip]
+  enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, if: :new_record?
 
   private

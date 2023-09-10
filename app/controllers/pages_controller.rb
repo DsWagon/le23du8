@@ -18,4 +18,9 @@ class PagesController < ApplicationController
     if current_user.vip?
     end
   end
+
+  def admin
+    if current_user.admin?
+    end
+  end
 end
