@@ -80,16 +80,16 @@ quote2 = Quote.create!(
   meeting: meeting2
 )
 
-comment1 = Comment.create!(
-  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  user: david,
-  meeting: meeting1
-)
+# comment1 = Comment.create!(
+#   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+#   user: david,
+#   meeting: meeting1
+# )
 
-comment2 = Comment.create!(
-  content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-  user: david,
-  meeting: meeting2
-)
+# comment2 = Comment.create!(
+#   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+#   user: david,
+#   meeting: meeting2
+# )
 
 puts "Finished!"

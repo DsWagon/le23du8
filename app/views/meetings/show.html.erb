@@ -9,18 +9,22 @@
           <p class="card-text">Syndic : <%= @meeting.syndic.name %></p>
           <p class="card-text"><%= @meeting.description %></p>
           <%= link_to 'Voir les devis', quotes_path, class: 'btn btn-primary' %>
-          <hr>
-          <h1>Commentaires</h1>
-          <p><%= @meeting.comments.count %></p>
-          <% @meeting.comments.each do |comment| %>
-            <p><%= comment.user.first_name %></p>
-            <p><%= comment.content %></p>
+          <%= link_to 'Editer la réunion', edit_meeting_path, class: 'btn btn-primary' %>
+          <%= link_to "Delete",meeting_path(@meeting), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% if false %>
+            <h1>Commentaires</h1>
+            <p><%= @meeting.comments.count %></p>
+            <% @meeting.comments.each do |comment| %>
+              <p><%= comment.user.first_name %></p>
+              <p><%= comment.content %></p>
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+ <% if false %>
 <div class="container">
   <div class="row justify-content-center mt-4">
     <div class="col-md-6">
@@ -37,3 +41,4 @@
     </div>
   </div>
 </div>
+<% end %>

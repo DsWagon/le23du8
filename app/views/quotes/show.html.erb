@@ -14,6 +14,9 @@
           <p><%= @quote.meeting.title%></p>
           <hr>
           <%= link_to 'Voir les devis', quotes_path, class: 'btn btn-primary' %>
+          <%= link_to 'Editer la réunion', edit_quote_path, class: 'btn btn-primary' %>
+          <%= link_to "Delete",quote_path(@quote), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 class Meeting < ApplicationRecord
   has_many :comments, dependent: :destroy
+  has_many :quotes, dependent: :destroy
   belongs_to :syndic
 
   validates :title, presence: true
