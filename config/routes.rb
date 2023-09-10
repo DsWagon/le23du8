@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: {
-    sessions: 'admins/sessions',
-    registrations: 'admins/registrations'
-  }
-
   authenticated :user, ->(user) { user.vip? } do
     get "vip", to: "pages#vip"
     resources :quotes
