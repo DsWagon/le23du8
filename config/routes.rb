@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :views
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "admin", to: "pages#admin"
 
-  resources :meetings, only: [:index, :show] do
+  resources :meetings, only: [:index, :show, :new, :create] do
     resources :comments, only: [:new, :create]
   end
 

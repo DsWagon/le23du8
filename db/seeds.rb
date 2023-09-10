@@ -9,15 +9,29 @@
 
 puts "Creating users, flats and syndics and meetings and comments, and quotes..."
 
-david = User.create!(
-  email: "davidlog@gmail.com",
+alison = User.create!(
+  email: "vip@gmail.com",
   password: "azerty",
-  first_name: "David",
-  last_name: "Log"
+  first_name: "Vip",
+  last_name: "user",
+)
+
+david = User.create!(
+  email: "user@gmail.com",
+  password: "azerty",
+  first_name: "User",
+  last_name: "user",
 )
 
 flat = Flat.create!(
   user: david,
+  floor: 3,
+  surface: 80,
+  lot: 12
+)
+
+flat = Flat.create!(
+  user: alison,
   floor: 3,
   surface: 80,
   lot: 12
@@ -35,14 +49,14 @@ meeting1 = Meeting.create!(
   title: "ordre du jour 1",
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   date: "2021-09-02",
-  syndic: syndic
+  syndic: syndic,
 )
 
 meeting2 = Meeting.create!(
   title: "ordre du jour 2",
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   date: "2022-01-02",
-  syndic: syndic
+  syndic: syndic,
 )
 
 
