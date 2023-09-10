@@ -14,6 +14,7 @@ alison = User.create!(
   password: "azerty",
   first_name: "Vip",
   last_name: "user",
+  role: User.roles[:vip]
 )
 
 david = User.create!(
@@ -21,6 +22,7 @@ david = User.create!(
   password: "azerty",
   first_name: "User",
   last_name: "user",
+  role: User.roles[:user]
 )
 
 flat = Flat.create!(

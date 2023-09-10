@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :about, :profile, :admin ]
+  skip_before_action :authenticate_user!, only: [ :home, :about, :profile, :admin, :vip ]
 
   def home
   end
@@ -14,4 +14,8 @@ class PagesController < ApplicationController
 
   end
 
+  def vip
+    if current_user.vip?
+    end
+  end
 end

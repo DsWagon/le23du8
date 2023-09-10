@@ -19,13 +19,13 @@
               <%= link_to "Réunion", "/meetings", class: "btn btn-flat btn-login" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Nouvelle Réunion", "/meetings/new", class: "btn btn-flat btn-login" %>
+              <%= link_to "Nouvelle Réunion", "/meetings/new", class: "btn btn-flat btn-login" if current_user.vip? %>
             </li>
             <li class="nav-item">
               <%= link_to "Devis", "/quotes", class: "btn btn-flat btn-login" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Nouveau Devis", "/quotes/new", class: "btn btn-flat btn-login" %>
+              <%= link_to "Nouveau Devis", "/quotes/new", class: "btn btn-flat btn-login" if current_user.vip?%>
             </li>
             <li class="nav-item">
               <%= link_to "Profil", "/profile", class: "btn btn-flat btn-login" %>
