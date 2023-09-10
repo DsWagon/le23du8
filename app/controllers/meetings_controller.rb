@@ -1,5 +1,5 @@
 class MeetingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show]
+  skip_before_action :authenticate_user!, only: [ :index, :show, :new, :create]
 
   def index
     @meetings = Meeting.all
@@ -10,11 +10,11 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @meeting = Meeting.new
-    if @meeting.save
-      redirect_to @meeting
+    meeting = Meeting.new(meeting_params)
+    if meeting.save
+      redirect_to meeting_path(meeting)
     else
-      redirect_to root_path
+      render :new
     end
   end
 

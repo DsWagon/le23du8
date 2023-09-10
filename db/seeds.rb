@@ -14,7 +14,6 @@ alison = User.create!(
   password: "azerty",
   first_name: "Vip",
   last_name: "user",
-  role: User.roles[:vip]
 )
 
 david = User.create!(
@@ -22,7 +21,6 @@ david = User.create!(
   password: "azerty",
   first_name: "User",
   last_name: "user",
-  role: User.roles[:user]
 )
 
 flat = Flat.create!(
@@ -52,7 +50,6 @@ meeting1 = Meeting.create!(
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   date: "2021-09-02",
   syndic: syndic,
-  user: alison
 )
 
 meeting2 = Meeting.create!(
@@ -60,7 +57,6 @@ meeting2 = Meeting.create!(
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
   date: "2022-01-02",
   syndic: syndic,
-  user: alison
 )
 
 
