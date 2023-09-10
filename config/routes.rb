@@ -6,13 +6,12 @@ Rails.application.routes.draw do
 
   authenticated :user, ->(user) { user.vip? } do
     get "vip", to: "pages#vip"
-    resources :meetings, only: [:index, :show, :new, :create] do
+    resources :quotes
+    resources :meetings do
       resources :comments, only: [:new, :create]
     end
 
     resources :flats, only: [:edit, :update] do
-    end
-    resources :quotes, only: [:index, :show, :new, :create] do
     end
   end
 

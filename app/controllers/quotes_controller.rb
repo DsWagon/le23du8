@@ -23,6 +23,22 @@ class QuotesController < ApplicationController
     @comment = Comment.new
   end
 
+  def edit
+    @quote = Quote.find(params[:id])
+  end
+
+  def update
+    @quote = Quote.find(params[:id])
+    @quote.update(quote_params)
+    redirect_to quote_path(@quote)
+  end
+
+  def destroy
+    @quote = Quote.find(params[:id])
+    @quote.destroy
+    redirect_to quotes_path
+  end
+
   private
 
   def quote_params
