@@ -21,15 +21,19 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12 mb-12">
-    <div class="card">
-      <%= simple_form_for [@meeting, @comment] do |f| %>
-        <%= f.input :content, as: :text, label: "Écrivez votre commentaire" %>
-        <%= f.button :submit, value: "Envoyer", class: 'btn-btn-primary' %>
-      <% end %>
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <%= simple_form_for [@meeting, @comment] do |f| %>
+          <div class="card-body">
+            <%= f.input :content, as: :text, label: "Écrivez votre commentaire", class: "form-control" %>
+          </div>
+          <div class="card-footer text-center">
+            <%= f.button :submit, value: "Envoyer", class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-<%# <%= link_to 'Back', meetings_path %>
