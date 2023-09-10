@@ -1,4 +1,4 @@
-
+<% if user_signed_in? && (current_user.vip? || current_user.user?) %>
 <div class="container">
   <h1>Liste des devis</h1>
   <div class="row">
@@ -22,3 +22,32 @@
     <% end %>
   </div>
 </div>
+<% end %>
+
+<% if user_signed_in? && (current_user.admin?)%>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Réunion</th>
+      <th scope="col">Entreprise</th>
+      <th scope="col">prix</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @quotes.each_with_index do |quote, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= quote.meeting_id %></td>
+        <td><%= quote.company_name %></td>
+        <td><%= quote.price %></td>
+        <td><%= link_to "Delete",quote_path(quote), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+<%# proposer un affichage différent en fonction du choix de l'utilisateur %>

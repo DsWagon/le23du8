@@ -6,8 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
 puts "Creating users, flats and syndics and meetings and comments, and quotes..."
+
+odile = User.create!(
+  email: "admin@gmail.com",
+  password: "azerty",
+  first_name: "Admin",
+  last_name: "user",
+  role: User.roles[:admin]
+)
 
 alison = User.create!(
   email: "vip@gmail.com",
