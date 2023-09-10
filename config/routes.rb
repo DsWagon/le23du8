@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  get 'quotes/index'
-  get 'quotes/show'
+  devise_for :views
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations'
+  }
+
   devise_for :users
   root to: "pages#home"
   get "about", to: "pages#about"
   get "profile", to: "pages#profile"
+  get "admin", to: "pages#admin"
 
   resources :meetings, only: [:index, :show] do
     resources :comments, only: [:new, :create]
