@@ -1,4 +1,4 @@
-<% if user_signed_in? && (current_user.vip? || current_user.user?) %>
+<% if user_signed_in? && (current_user.vip? || current_user.user? || current_user.admin?) %>
 <div class="container" data-controller="quote-view">
   <h1>Liste des devis</h1>
   <div class="btn-group" role="group">
