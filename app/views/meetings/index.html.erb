@@ -1,8 +1,11 @@
 <% @meetings.each do |meeting| %>
   <% if can? :read, meeting %>
     <%= link_to "Meeting", meeting %>
+  <% else can? :manage, meeting %>
+    <%= link_to "MeetingManage", meeting %>
   <% end %>
 <% end %>
+
 
 
 <% if user_signed_in? && (current_user.vip? || current_user.user?) %>
