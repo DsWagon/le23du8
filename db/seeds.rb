@@ -8,6 +8,7 @@
 
 puts "Creating users, flats and syndics and meetings and comments, and quotes..."
 
+puts "type of users: admin, vip, user"
 odile = User.create!(
   email: "admin@gmail.com",
   password: "azerty",
@@ -31,6 +32,20 @@ david = User.create!(
   last_name: "user",
   role: User.roles[:user]
 )
+
+puts "build 20 more users"
+user = []
+20.times do
+  user << User.create!(
+    email: Faker::Internet.email,
+    password: "azerty",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    role: User.roles[:user]
+  )
+end
+
+
 
 flat = Flat.create!(
   user: david,

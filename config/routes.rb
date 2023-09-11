@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  authenticated :user, ->(user) { user.admin? || user.vip? } do
+  authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/motor_admin'
   end
 
