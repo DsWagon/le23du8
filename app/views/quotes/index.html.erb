@@ -1,9 +1,16 @@
 <% if user_signed_in? && (current_user.vip? || current_user.user?) %>
-<div class="container">
+<div class="container" data-controller="quote-view">
   <h1>Liste des devis</h1>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-primary" data-action="quote-view#toggleCardView">Vue en Carte</button>
+    <button type="button" class="btn btn-primary" data-action="quote-view#toggleTableView">Vue en Tableau</button>
+  </div>
+
+
+
   <div class="row">
     <% @quotes.each do |quote| %>
-      <div class="col-md-12 mb-12">
+      <div class="col-md-12 mb-12 card-view " data-quote-view-target="cardView">
         <div class="card">
           <div class="card-header"><%= quote.meeting.title%>, <%= quote.company_name %>
           </div>
@@ -21,10 +28,9 @@
       </div>
     <% end %>
   </div>
-</div>
-<% end %>
 
-<% if user_signed_in? && (current_user.admin?)%>
+<div class="table-view" style="display: none;" data-quote-view-target="tableView">
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
