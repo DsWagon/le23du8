@@ -7,7 +7,8 @@ ruby "3.1.2"
 gem "cicero" #lorem ipsum
 gem "faker" #fake data
 gem 'htmlbeautifier' #html beautifier
-
+gem 'motor-admin' #admin panel
+gem 'cancancan' #authorization
 
 
 
