@@ -21,7 +21,6 @@ class PagesController < ApplicationController
 
   def admin
     if current_user.admin?
-      @users = User.all
     end
   end
 end
