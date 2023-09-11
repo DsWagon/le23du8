@@ -5,6 +5,7 @@
     <button type="button" class="btn btn-primary" data-action="meeting-view#toggleCardView">Vue en Carte</button>
     <button type="button" class="btn btn-primary" data-action="meeting-view#toggleTableView">Vue en Tableau</button>
   </div>
+  
 
 
   <div class="row">
@@ -28,6 +29,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Titre</th>
+      <th scope="col">Lien</th>
       <th scope="col">Date</th>
       <th scope="col">Syndic</th>
       <th scope="col">Supprimer</th>
@@ -38,6 +40,7 @@
       <tr>
         <th scope="row"><%= index + 1 %></th>
         <td><%= meeting.title %></td>
+        <td><%= link_to "Lien", meeting %></td><!-- Ajout du lien vers la page "show" -->
         <td><%= meeting.date %></td>
         <td><%= meeting.syndic.name %></td>
         <td><%= link_to "Delete",meeting_path(meeting), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>

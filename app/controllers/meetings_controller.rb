@@ -3,6 +3,7 @@ class MeetingsController < ApplicationController
 
   def index
     @meetings = Meeting.all
+    @meetings = Meeting.all.order(date: :desc)
   end
 
   def new

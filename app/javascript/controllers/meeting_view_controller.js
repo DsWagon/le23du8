@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["cardView", "tableView"]
-  
+
 
   toggleCardView() {
     this.cardViewTargets.forEach((el) => {
