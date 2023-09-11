@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  authenticated :user, ->(user) { user.admin? || user.vip? } do
+    mount Motor::Admin => '/motor_admin'
+  end
+
   authenticated :user, ->(user) { user.vip? } do
     get "vip", to: "pages#vip"
     resources :quotes

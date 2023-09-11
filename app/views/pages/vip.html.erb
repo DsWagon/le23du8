@@ -4,6 +4,7 @@
       <h2 style="text-align:center;">Dashboard</h2>
       <%= link_to "Nouvelle Réunion", "/meetings/new", class: "btn btn-flat btn-login" if current_user.vip? %>
       <%= link_to "Nouveau Devis", "/quotes/new", class: "btn btn-flat btn-login" if current_user.vip? %>
+      <%= link_to "Devis", "/quotes", class: "btn btn-flat btn-login" if current_user.vip? %>
     </div>
   </div>
 </div>

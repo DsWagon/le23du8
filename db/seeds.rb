@@ -46,6 +46,13 @@ flat = Flat.create!(
   lot: 12
 )
 
+flat = Flat.create!(
+  user: odile,
+  floor: 3,
+  surface: 80,
+  lot: 12
+)
+
 syndic = Syndic.create!(
   name: "Balma gestion",
   description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
