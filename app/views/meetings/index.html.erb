@@ -1,10 +1,13 @@
-<% @meetings.each do |meeting| %>
-  <% if can? :read, meeting %>
-    <%= link_to "Meeting", meeting %>
-  <% else can? :manage, meeting %>
-    <%= link_to "MeetingManage", meeting %>
+<% if false %>
+  <% if false %>
+  <% @meetings.each do |meeting| %>
+    <% if can? :read, meeting %>
+      <%= link_to "Meeting", meeting %>
+    <% else can? :manage, meeting %>
+      <%= link_to "MeetingManage", meeting %>
+    <% end %>
   <% end %>
-<% end %>
+  <% end %>
 
 
 
@@ -52,5 +55,56 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
+<% end %>
 
+<% if user_signed_in? && (current_user.vip? || current_user.user?) %>
+<div class="container" data-controller="meeting-view">
+  <h1>Liste des réunions</h1>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-primary" data-action="meeting-view#toggleCardView">Vue en Carte</button>
+    <button type="button" class="btn btn-primary" data-action="meeting-view#toggleTableView">Vue en Tableau</button>
+  </div>
+
+  <div class="row">
+    <% @meetings.each do |meeting| %>
+      <div class="col-md-12 mb-12 card-view " data-target="meeting-view.cardView">
+        <div class="card">
+          <div class="card-header"><%= meeting.title %>, <%= meeting.date %>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Syndic : <%= meeting.syndic.name %></p>
+            <p class="card-text"><%= meeting.description %></p>
+            <%= link_to 'Voir la réunion', meeting, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="table-view" style="display: none;" data-target="meeting-view.tableView">
+      <table class="table">
+        <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Date</th>
+      <th scope="col">Syndic</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @meetings.each_with_index do |meeting, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= meeting.title %></td>
+        <td><%= meeting.date %></td>
+        <td><%= meeting.syndic.name %></td>
+        <td><%= link_to "Delete",meeting_path(meeting), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <% end %>

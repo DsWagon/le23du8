@@ -7,7 +7,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.vip?
-      can :read, Quote
+      can :manage, :all
     else user.user?
       can :read, :all
     end

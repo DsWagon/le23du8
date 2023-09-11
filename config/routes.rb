@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   authenticated :user, ->(user) { user.admin? } do
-    mount Motor::Admin => '/motor_admin'
+    mount Motor::Admin => '/admin'
   end
 
   authenticated :user, ->(user) { user.vip? } do
