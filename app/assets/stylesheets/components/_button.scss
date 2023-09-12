@@ -1,29 +1,31 @@
 .btn-flat {
   color: white;
   padding: 8px 24px;
+  border: 1px solid white;
   border-radius: 20px;
   background: #1A65A5;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  border: 2px solid #1A65A5;
+  border: 1px solid #1A65A5;
   background: rgb( 53, 154, 157);
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
-
 }
 
 .btn-rounded {
   background: rgb( 53, 154, 157);
   border-radius: 20px;
   color: white;
+  transition: background 0.3s ease;
+
 }
 
 .btn-rounded:hover {
   background: rgb( 53, 154, 157);
-  border: 2px solid #1A65A5;
+  border: 1px solid #1A65A5;
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
@@ -34,11 +36,13 @@
   background: #F44336;
   border-radius: 20px;
   color: white;
+  transition: background 0.3s ease;
+
 }
 
 .btn-danger:hover {
   background: #F44336;
-  border: 2px solid #F44336;
+  border: 1px solid #F44336;
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
@@ -63,6 +67,8 @@
   color: white;
   background-color: #1A65A5;
   cursor: pointer;
+  transition: background 0.3s ease;
+
 
 }
 .btn-switch:hover {
@@ -71,7 +77,6 @@
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
-
 }
 
 .fa-moon {

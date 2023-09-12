@@ -12,28 +12,28 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Page d'accueil", "/", class: "btn btn-flat btn-login" %>
+            <%= link_to "Page d'accueil", "/", class: "btn btn-flat" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Réunion", "/meetings", class: "btn btn-flat btn-login" %>
+            <%= link_to "Réunion", "/meetings", class: "btn btn-flat" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Nouvelle Réunion", "/meetings/new", class: "btn btn-flat btn-login" if current_user.vip? %>
+            <%= link_to "Nouvelle Réunion", "/meetings/new", class: "btn btn-flat" if current_user.vip? %>
           </li>
           <li class="nav-item">
-            <%= link_to "Devis", "/quotes", class: "btn btn-flat btn-login" %>
+            <%= link_to "Devis", "/quotes", class: "btn btn-flat" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Nouveau Devis", "/quotes/new", class: "btn btn-flat btn-login" if current_user.vip?%>
+            <%= link_to "Nouveau Devis", "/quotes/new", class: "btn btn-flat" if current_user.vip?%>
           </li>
           <li class="nav-item">
-            <%= link_to "Profil", "/profile", class: "btn btn-flat btn-login" %>
+            <%= link_to "Profil", "/profile", class: "btn btn-flat" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Dashboard", "/vip", class: "btn btn-flat btn-login" if current_user.vip? %>
+            <%= link_to "Dashboard", "/vip", class: "btn btn-flat" if current_user.vip? %>
           </li>
           <li class="nav-item">
-            <%= link_to "Admin", "/admin", class: "btn btn-flat btn-login" if current_user.admin? %>
+            <%= link_to "Admin", "/admin", class: "btn btn-flat" if current_user.admin? %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,7 +48,7 @@
           </li>
           <li class="nav-item">
             <li class="nav-item">
-              <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-flat btn-login" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-flat" %>
             </li>
           </li>
         <% else %>
