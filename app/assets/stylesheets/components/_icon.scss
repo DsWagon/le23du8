@@ -1,0 +1,22 @@
+.circle-icon {
+  width: 30px; /* Ajustez la taille du cercle selon vos préférences */
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid $red-500;
+  border-radius: 50%; /* Créer un cercle en utilisant le border-radius */
+  text-align: center;
+  line-height: 30px; /* Centrer le contenu verticalement */
+  transition: background-color 0.3s; /* Ajouter une transition pour l'effet de survol */
+}
+
+/* Style de survol du cercle */
+[data-bs-theme=light] .circle-icon:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: $gray-400; /* Changer la couleur de fond au survol */
+}
+
+[data-bs-theme=dark]
+.circle-icon:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: $gray-600;
+}

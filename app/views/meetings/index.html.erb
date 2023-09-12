@@ -1,14 +1,12 @@
 <% if user_signed_in? && (current_user.vip? || current_user.user? || current_user.admin?) %>
 <div class="container" data-controller="meeting-view">
-  <h1>Liste des réunions</h1>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary" data-action="meeting-view#toggleCardView">Vue en Carte</button>
-    <button type="button" class="btn btn-primary" data-action="meeting-view#toggleTableView">Vue en Tableau</button>
+  <div class="mt-3">
+  <h3>Liste des réunions</h3>
+    <div class="btn-group mt-1" role="group">
+      <button type="button" class="btn btn-flat mx-2" data-action="meeting-view#toggleCardView"><i class="fa-solid fa-list fa-xl me-3"></i></i>Vue en liste</button>
+      <button type="button" class="btn btn-flat mx-2" data-action="meeting-view#toggleTableView"><i class="fa-solid fa-table fa-lg me-3"></i>Vue en tableau</button>
+    </div>
   </div>
-    <button class="btn-switch ms-auto me-2" data-controller="meeting-toggle-view" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch">
-      <i class="fa-solid fa-list fa-lg" data-view="list"></i>
-      <i class="fa-regular fa-moon fa-lg" data-theme="dark"></i>
-    </button>
 
 
 
@@ -47,7 +45,11 @@
         <td><%= link_to "Lien", meeting %></td><!-- Ajout du lien vers la page "show" -->
         <td><%= meeting.date %></td>
         <td><%= meeting.syndic.name %></td>
-        <td><%= link_to "Delete",meeting_path(meeting), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+        <td style="text-align: center; vertical-align: middle;">
+          <%= link_to meeting_path(meeting), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash fa-lg circle-icon" style="color: #e7081f;"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
