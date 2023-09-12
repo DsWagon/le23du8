@@ -9,6 +9,7 @@
       <i class="fa-regular fa-sun fa-lg" data-theme="light"></i>
       <i class="fa-regular fa-moon fa-lg" data-theme="dark"></i>
     </button>
+    <% if user_signed_in? %>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,7 +21,7 @@
       <div class="offcanvas-header">
         <% if user_signed_in? %>
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="display: inline;"><strong><%= current_user.role.capitalize %></strong></h5>
-        <% end %>
+          <% end %>
       </div>
       <hr>
       <div class="offcanvas-body">
@@ -32,10 +33,25 @@
             <% end %>
           </li>
           <li class="nav-item">
-            <% if current_user.vip? %>
-              <%= link_to "/vip", class: "btn btn-flat" do %>
-                <i class="fa-solid fa-gear fa-lg me-2"></i>
-                Dashboard
+              <% if current_user.admin? %>
+                <%= link_to "/admin", class: "btn btn-flat" do %>
+                  <i class="fa-solid fa-gear fa-lg me-2"></i>
+                  Admin
+                <% end %>
+              <% elsif current_user.vip? %>
+                <%= link_to "/vip", class: "btn btn-flat" do %>
+                  <i class="fa-solid fa-gear fa-lg me-2"></i>
+                  Dashboard
+                <% end %>
+              <% elsif %>
+                <%= link_to "/user", class: "btn btn-flat" do %>
+                  <i class="fa-solid fa-gear fa-lg me-2"></i>
+                  User
+                <% end %>
+            <% else %>
+              <%= link_to "/login", class: "btn btn-flat" do %>
+                <i class="fa-solid fa-sign-in-alt fa-lg me-2"></i>
+                Login
               <% end %>
             <% end %>
           </li>
@@ -48,5 +64,11 @@
         </ul>
       </div>
     </div>
+  <% else %>
+      <%= link_to new_user_session_path, class: "nav-link", class: "btn btn-flat" do %>
+      <i class="fa-solid fa-right-to-bracket fa-lg"></i>
+      Se connecter
+    <% end %>
+  <% end %>
   </div>
 </nav>
