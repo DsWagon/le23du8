@@ -19,3 +19,7 @@
 - [ ] ajouter PG search pour la barre de recherche
 - [ ] ajouter un système de commentaires / messagerie
 - [ ] mailing list and phone list
+- [ ] ajouter un système de notifications push ?
+
+# réparations / bugs
+- [ ] réparer le bug PG violations avec admin

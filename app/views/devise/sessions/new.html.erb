@@ -5,15 +5,17 @@
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-        <div class="form-inputs">
+        <div class="form-inputs mt-5">
           <%= f.input :email,
+                      label: false,
                       required: false,
                       autofocus: true,
-                      input_html: { autocomplete: "email" } %>
+                      input_html: { placeholder: "Email", autocomplete: "email" } %>
           <%= f.input :password,
+                      label: false,
                       required: false,
-                      input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                      input_html: { placeholder: "Mot de passe", autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean, label: "Se souvenir de moi" if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
