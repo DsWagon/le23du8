@@ -5,6 +5,7 @@
 - [X] ajouter un fichier TODO.md
 - [ ] ajouter sur la page d'acceuil les prochaines réunions
 - [ ] ajouter sur la page d'acceuil la date des prochains travaux
+- [ ] ajouter sur la page d'acceuil des petites annonces ?
 
 # esthétique
 - [ ] ajouter certains éléments en modal

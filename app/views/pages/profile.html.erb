@@ -47,7 +47,7 @@
       <p><i class="fa-solid fa-shop fa-lg"></i> <%= @syndic.name %></p>
       <p><strong><i class="fa-solid fa-location-dot fa-lg"></i></strong> Adresse : <%= @syndic.address %></p>
       <p><strong><i class="fa-solid fa-phone fa-lg"></i></strong> Téléphone : <%= @syndic.phone %></p>
-      <p><strong><i class="fa-solid fa-envelope fa-lg me-2"></i> E-mail :</strong> <%= @syndic.email %></p>
+      <p><strong><i class="fa-solid fa-envelope fa-lg me-2"></i> E-mail :</strong> <a href="mailto:<%= @syndic.email %>"><%= @syndic.email %></a>
       <hr>
       <p>Description : <%= @syndic.description %></p>
     </div>
