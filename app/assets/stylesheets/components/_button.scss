@@ -45,10 +45,45 @@
 
 }
 
+// .btn-switch {
+//   color: white;
+//   padding: 8px 24px;
+//   border-radius: 20px;
+//   background: #1A65A5;
+//   transition: background 0.3s ease;
+// }
+
+
 .btn-switch {
-  color: white;
-  padding: 8px 24px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid;
   border-radius: 20px;
-  background: #1A65A5;
+  color: white;
+  background-color: #1A65A5;
+  cursor: pointer;
+
+}
+.btn-switch:hover {
+  border: 2px solid #1A65A5;
+  background: rgb( 53, 154, 157);
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
+
+}
+
+.fa-moon {
+  display: none;
+}
+
+[data-theme="light"] .fa-sun,
+[data-theme="dark"] .fa-moon {
+  display: inline;
+}
+
+[data-theme="light"] .fa-moon,
+[data-theme="dark"] .fa-sun {
+  display: none;
 }

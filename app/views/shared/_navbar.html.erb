@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-backbround">
+<div class="navbar navbar-expand-sm navbar-light navbar-background">
   <div class="container-fluid">
     <div class="d-flex align-items-end">
       <%= link_to "/", class: "navbar-brand" do %>
@@ -56,7 +56,10 @@
             <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-        <button class="btn-switch" data-controller="theme-toggle" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch"><i class="fa fa-bars"></i></button>
+        <button class="btn-switch" data-controller="theme-toggle" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch">
+          <i class="fa-regular fa-sun fa-lg" data-theme="light"></i>
+          <i class="fa-regular fa-moon fa-lg" data-theme="dark"></i>
+        </button>
       </ul>
     </div>
   </div>
