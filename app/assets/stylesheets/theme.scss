@@ -1,0 +1,10 @@
+[data-bs-theme=light] .element {
+  color: var(--bs-primary-text-light);
+  background-color: var(--bs-primary-bg-light);
+}
+
+[data-bs-theme=dark] .element {
+  color: var(--bs-primary-text-dark);
+  background-color: var(--bs-primary-bg-dark);
+}
+
