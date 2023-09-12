@@ -12,9 +12,6 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Page d'accueil", "/", class: "btn btn-flat" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Réunion", "/meetings", class: "btn btn-flat" %>
           </li>
           <li class="nav-item">
@@ -34,17 +31,6 @@
           </li>
           <li class="nav-item">
             <%= link_to "Admin", "/admin", class: "btn btn-flat" if current_user.admin? %>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Link
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
           </li>
           <li class="nav-item">
             <li class="nav-item">
