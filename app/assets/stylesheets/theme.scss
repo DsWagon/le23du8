@@ -1,0 +1,19 @@
+[data-bs-theme=light] .element {
+  color: var(--bs-primary-text-light);
+  background-color: var(--bs-primary-bg-light);
+}
+
+[data-bs-theme=dark] .element {
+  color: var(--bs-primary-text-dark-lighter);
+  background-color: var(--bs-primary-bg-dark);
+}
+
+[data-bs-theme=dark] .form-container {
+  color: var(--bs-primary-text-dark-lighter);
+  background-color: var(--bs-primary-bg-dark);
+  box-shadow: none;
+  border-radius: 5px;
+  border-color: white;
+  background-color: $gray-800;
+  border: 1px solid $gray-700;
+}
