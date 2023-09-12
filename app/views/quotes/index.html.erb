@@ -1,9 +1,10 @@
 <% if user_signed_in? && (current_user.vip? || current_user.user? || current_user.admin?) %>
 <div class="container" data-controller="quote-view">
-  <h1>Liste des devis</h1>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary" data-action="quote-view#toggleCardView">Vue en Carte</button>
-    <button type="button" class="btn btn-primary" data-action="quote-view#toggleTableView">Vue en Tableau</button>
+  <div class="mt-3">
+  <h3>Liste des devis</h3>
+    <div class="btn-group mt-1" role="group">
+    <button type="button" class="btn btn-flat mx-2" data-action="quote-view#toggleCardView"><i class="fa-solid fa-list fa-xl me-3"></i>Vue en liste</button>
+    <button type="button" class="btn btn-flat mx-2" data-action="quote-view#toggleTableView"><i class="fa-solid fa-table fa-lg me-3"></i>Vue en tableau</button>
   </div>
 
 
@@ -48,7 +49,11 @@
         <td><%= quote.meeting_id %></td>
         <td><%= quote.company_name %></td>
         <td><%= quote.price %></td>
-        <td><%= link_to "Delete",quote_path(quote), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+        <td style="text-align: center; vertical-align: middle;">
+          <%= link_to quote_path(quote), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash fa-lg circle-icon" style="color: #e7081f;"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
