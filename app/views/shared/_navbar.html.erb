@@ -1,52 +1,45 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-background">
+<nav class="navbar bg-body-tertiary fixed-top navbar-background">
   <div class="container-fluid">
     <div class="d-flex align-items-end">
       <%= link_to "/", class: "navbar-brand" do %>
         <%= image_tag "content.png" %>
       <% end %>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="btn-switch ms-auto me-2" data-controller="theme-toggle" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch">
+      <i class="fa-regular fa-sun fa-lg" data-theme="light"></i>
+      <i class="fa-regular fa-moon fa-lg" data-theme="dark"></i>
+    </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="offcanvas offcanvas-end navbar-nav" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Profil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Votre rôle : </h5>
         <% if user_signed_in? %>
+        <h5 class="me-5"><%= current_user.role %></h5>
+        <% end %>
+      </div>
+      <hr>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <%= link_to "Réunion", "/meetings", class: "btn btn-flat" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Nouvelle Réunion", "/meetings/new", class: "btn btn-flat" if current_user.vip? %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Devis", "/quotes", class: "btn btn-flat" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Nouveau Devis", "/quotes/new", class: "btn btn-flat" if current_user.vip?%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Profil", "/profile", class: "btn btn-flat" %>
+            <%= link_to "Modifier vos informations", "/profile", class: "btn btn-flat" %>
           </li>
           <li class="nav-item">
             <%= link_to "Dashboard", "/vip", class: "btn btn-flat" if current_user.vip? %>
           </li>
           <li class="nav-item">
-            <%= link_to "Admin", "/admin", class: "btn btn-flat" if current_user.admin? %>
+            <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-flat" do %>
+              Se déconnecter
+              <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+            <% end %>
           </li>
-          <li class="nav-item">
-            <li class="nav-item">
-              <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-flat" %>
-            </li>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-        <button class="btn-switch" data-controller="theme-toggle" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch">
-          <i class="fa-regular fa-sun fa-lg" data-theme="light"></i>
-          <i class="fa-regular fa-moon fa-lg" data-theme="dark"></i>
-        </button>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</nav>

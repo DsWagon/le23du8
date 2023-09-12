@@ -1,16 +1,27 @@
-.btn-flat {
-  color: white;
+[data-bs-theme=light] .btn-flat {
   padding: 8px 24px;
-  border: 1px solid white;
+  border: 1px solid rgb( 53, 154, 157);
   border-radius: 20px;
-  background: #1A65A5;
   transition: background 0.3s ease;
 }
 
-.btn-flat:hover {
-  border: 1px solid #1A65A5;
-  background: rgb( 53, 154, 157);
-  color: white;
+[data-bs-theme=light] .btn-flat:hover {
+  background: grey;
+  border: 1px solid rgb( 53, 154, 157);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+
+[data-bs-theme=dark] .btn-flat {
+  padding: 8px 24px;
+  border: 1px solid rgb( 53, 154, 157);
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+[data-bs-theme=dark] .btn-flat:hover {
+  background: grey;
+  border: 1px solid rgb( 53, 154, 157);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
 }
@@ -64,19 +75,16 @@
   background-color: transparent;
   border: 1px solid;
   border-radius: 20px;
-  color: white;
-  background-color: #1A65A5;
   cursor: pointer;
   transition: background 0.3s ease;
 
 
 }
 .btn-switch:hover {
-  border: 2px solid #1A65A5;
-  background: rgb( 53, 154, 157);
-  color: white;
+  background: $gray-300;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
+
 }
 
 .fa-moon {
