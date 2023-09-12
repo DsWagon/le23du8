@@ -1,13 +1,13 @@
 <div class="container">
   <div class="card">
-    <h5 class="card-header">Informations personnelles :</h5>
+    <h5 class="card-header">Mes informations personnelles :</h5>
     <div class="card-body">
       <div class="row">
         <div class="col-md-6 col-sm-6 ">
           <div>
-            <p>Prénom : <%= @user.first_name %></p>
-            <p>Nom : <%= @user.last_name %></p>
-            <p>E-mail : <%= @user.email %></p>
+            <p><strong><i class="fa-solid fa-envelope fa-lg me-2"></i> E-mail :</strong>  <%= @user.email %></p>
+            <p><strong>Prénom :</strong> <%= @user.first_name %></p>
+            <p><strong>Nom :</strong> <%= @user.last_name %></p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6">
@@ -25,9 +25,9 @@
         <div class="col-md-6 col-sm-6 ">
           <div>
             <% if @user_flat.present? %>
-              <p>Étage : <%= @user_flat.floor %></p>
-              <p>Surface : <%= @user_flat.surface %></p>
-              <p>Numéro de lot : <%= @user_flat.lot %></p>
+              <p><strong><i class="fa-solid fa-building fa-lg me-2"></i> Étage :  </strong>  <%= @user_flat.floor %></p>
+              <p><strong><i class="fa-solid fa-ruler fa-lg me-2"></i>Surface :  </strong>  <%= @user_flat.surface %></p>
+              <p><strong><i class="fa-solid fa-tag fa-lg"></i> Numéro de lot : </strong>  <%= @user_flat.lot %></p>
             <% else %>
               <p>L'utilisateur n'a pas encore de logement associé.</p>
             <% end %>
@@ -44,20 +44,13 @@
   <div class="card">
     <h5 class="card-header">Contacter votre syndic :</h5>
     <div class="card-body">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 ">
-          <div>
-            <p><%= @syndic.name %></p>
-            <p>Description : <%= @syndic.description %></p>
-            <p>Adresse : <%= @syndic.address %></p>
-            <p>Téléphone : <%= @syndic.phone %></p>
-            <p>E-mail : <%= @syndic.email %></p>
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <div class="d-flex align-items-center justify-content-center h-100">
-          </div>
-        </div>
-      </div>
+      <p><i class="fa-solid fa-shop fa-lg"></i> <%= @syndic.name %></p>
+      <p><strong><i class="fa-solid fa-location-dot fa-lg"></i></strong> Adresse : <%= @syndic.address %></p>
+      <p><strong><i class="fa-solid fa-phone fa-lg"></i></strong> Téléphone : <%= @syndic.phone %></p>
+      <p><strong><i class="fa-solid fa-envelope fa-lg me-2"></i> E-mail :</strong> <%= @syndic.email %></p>
+      <hr>
+      <p>Description : <%= @syndic.description %></p>
     </div>
   </div>
+</div>
+</div>
