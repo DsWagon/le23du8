@@ -1,16 +1,16 @@
-.navbar-lewagon {
+.navbar-background {
   justify-content: space-between;
-  background: rgb(165, 220, 224);
-  border-bottom: 4px solid rgb( 53, 154, 157);
+  background: $cyan-100;
+  border-bottom: 1px solid rgb( 53, 154, 157);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-background .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-background .navbar-brand img {
   margin-left: 10px;
-  width: 150px;
+  width: 110px;
 
 }
 .navbar-nav {

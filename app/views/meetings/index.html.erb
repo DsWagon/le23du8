@@ -1,11 +1,11 @@
-<% if user_signed_in? && (current_user.vip? || current_user.user?) %>
+<% if user_signed_in? && (current_user.vip? || current_user.user? || current_user.admin?) %>
 <div class="container" data-controller="meeting-view">
   <h1>Liste des réunions</h1>
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-primary" data-action="meeting-view#toggleCardView">Vue en Carte</button>
     <button type="button" class="btn btn-primary" data-action="meeting-view#toggleTableView">Vue en Tableau</button>
   </div>
-  
+
 
 
   <div class="row">
