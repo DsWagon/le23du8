@@ -17,3 +17,4 @@
 - [ ] ajouter un système de vote pour les propositions/travaux/devis ??
 - [ ] ajouter PG search pour la barre de recherche
 - [ ] ajouter un système de commentaires / messagerie
+- [ ] mailing list and phone list
