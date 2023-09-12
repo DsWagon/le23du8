@@ -6,7 +6,7 @@
 }
 
 [data-bs-theme=light] .btn-flat:hover {
-  background: grey;
+  background: $gray-400;
   border: 1px solid rgb( 53, 154, 157);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
@@ -20,7 +20,7 @@
 }
 
 [data-bs-theme=dark] .btn-flat:hover {
-  background: grey;
+  background: $gray-600;
   border: 1px solid rgb( 53, 154, 157);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
@@ -73,7 +73,7 @@
   width: 40px;
   height: 40px;
   background-color: transparent;
-  border: 1px solid;
+  border: 1px solid $gray-500;
   border-radius: 20px;
   cursor: pointer;
   transition: background 0.3s ease;

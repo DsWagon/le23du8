@@ -18,24 +18,31 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Votre rôle : </h5>
         <% if user_signed_in? %>
-        <h5 class="me-5"><%= current_user.role %></h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="display: inline;"><strong><%= current_user.role.capitalize %></strong></h5>
         <% end %>
       </div>
       <hr>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <%= link_to "Modifier vos informations", "/profile", class: "btn btn-flat" %>
+            <%= link_to "/profile", class: "btn btn-flat" do %>
+              <i class="fa-solid fa-user fa-lg me-2"></i>
+              Modifier mon profil
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "Dashboard", "/vip", class: "btn btn-flat" if current_user.vip? %>
+            <% if current_user.vip? %>
+              <%= link_to "/vip", class: "btn btn-flat" do %>
+                <i class="fa-solid fa-gear fa-lg me-2"></i>
+                Dashboard
+              <% end %>
+            <% end %>
           </li>
           <li class="nav-item">
             <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-flat" do %>
+              <i class="fa-solid fa-right-from-bracket fa-lg me-2"></i>
               Se déconnecter
-              <i class="fa-solid fa-right-from-bracket fa-lg"></i>
             <% end %>
           </li>
         </ul>
