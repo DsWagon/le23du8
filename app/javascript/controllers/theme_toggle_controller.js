@@ -13,5 +13,25 @@ export default class extends Controller {
     this.btnSwitchTargets.forEach(target => {
       target.dataset.theme = newTheme;
     });
+
+    // Sauvegarder le thème dans localStorage
+    localStorage.setItem('theme', newTheme);
+  }
+
+  initialize() {
+    // Charger l'état du thème depuis localStorage lors de l'initialisation
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      this.updateIcon(savedTheme);
+    }
+  }
+
+  updateIcon(theme) {
+    // Mettre à jour les icônes en utilisant les classes CSS
+    this.btnSwitchTargets.forEach(target => {
+      target.dataset.theme = theme;
+    });
   }
 }
+
