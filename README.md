@@ -5,6 +5,7 @@
 - [X] ajouter un fichier TODO.md
 - [ ] ajouter sur la page d'acceuil les prochaines réunions
 - [ ] ajouter sur la page d'acceuil la date des prochains travaux
+- [ ] ajouter sur la page d'acceuil des petites annonces ?
 
 # esthétique
 - [ ] ajouter certains éléments en modal
@@ -18,3 +19,8 @@
 - [ ] ajouter PG search pour la barre de recherche
 - [ ] ajouter un système de commentaires / messagerie
 - [ ] mailing list and phone list
+- [ ] ajouter un système de notifications push ?
+
+# réparations / bugs
+- [ ] réparer le bug PG violations avec admin
+- [ ] réparer le bug flat
