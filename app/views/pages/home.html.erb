@@ -1,24 +1,12 @@
-<div class="container mt-5">
-  <div class="d-flex justify-content-center">
-    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-calendar-days fa-lg"></i>
-      Réunions
-    <% end %>
-    <%= link_to "/quotes", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-file-invoice fa-lg"></i>
-      Devis
-    <% end %>
-  </div>
-    <hr class="dash">
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-12 ">
-          <h1 class="text-center">Bienvenue sur <strong>"Le23du8"</strong> !</h1>
-          <p class="text-center">Notre site a été spécialement conçu pour vous offrir un accès facile à toutes les informations concernant notre copropriété, ainsi qu'à une multitude de ressources utiles.</p>
-          <% if user_signed_in? %>
-            <p class="text-center">Votre rôle : <%= current_user.role %></p>
-          <% end %>
-        </div>
+<div class="row mt-5">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12 ">
+        <h1 class="text-center">Bienvenue sur <strong>"Le23du8"</strong> !</h1>
+        <p class="text-center">Notre site a été spécialement conçu pour vous offrir un accès facile à toutes les informations concernant notre copropriété, ainsi qu'à une multitude de ressources utiles.</p>
+        <% if user_signed_in? %>
+          <p class="text-center">Votre rôle : <%= current_user.role %></p>
+        <% end %>
       </div>
     </div>
+  </div>
