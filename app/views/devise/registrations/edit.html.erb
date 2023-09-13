@@ -22,15 +22,15 @@
                         autofocus: true,input_html: { autocomplete: "last-name" }%>
             </div>
           </div>
-          <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+          <%= f.input :password, label: "Nouveau mot de passe (facultatif)",
+                hint: "Laissez-le vide si vous ne voulez pas le changer",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
+          <%= f.input :password_confirmation, label: "Confirmation du nouveau mot de passe (facultatif)",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-          <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+          <%= f.input :current_password, label: "Mot de passe actuel (obligatoire)",
+                hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
         </div>
