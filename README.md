@@ -24,3 +24,5 @@
 # réparations / bugs
 - [ ] réparer le bug PG violations avec admin
 - [ ] réparer le bug flat
+- [X] fix devise for custom fields edit new
+- [X] fix devise for custom fields edit update
