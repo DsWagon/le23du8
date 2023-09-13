@@ -1,7 +1,23 @@
 class FlatsController < ApplicationController
-  
-  skip_before_action :authenticate_user!, only: [:edit, :update]
-  before_action :set_flat, only: [ :edit, :update]
+
+  skip_before_action :authenticate_user!, only: [:new, :edit, :update]
+  before_action :set_flat, only: [:edit, :update]
+
+  def new
+    @user = current_user
+    @user_flat = Flat.new
+  end
+
+  def create
+    @user = current_user
+    @user_flat = Flat.new(flat_params)
+    @user_flat.user = @user
+    if @user_flat.save
+      redirect_to profile_path
+    else
+      render :new
+    end
+  end
 
   def edit
     @user = current_user

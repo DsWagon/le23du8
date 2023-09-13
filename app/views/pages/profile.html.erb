@@ -28,14 +28,15 @@
               <p><strong><i class="fa-solid fa-building fa-lg me-2"></i> Étage :  </strong>  <%= @user_flat.floor %></p>
               <p><strong><i class="fa-solid fa-ruler fa-lg me-2"></i>Surface :  </strong>  <%= @user_flat.surface %></p>
               <p><strong><i class="fa-solid fa-tag fa-lg"></i> Numéro de lot : </strong>  <%= @user_flat.lot %></p>
-            <% else %>
-              <p>L'utilisateur n'a pas encore de logement associé.</p>
-            <% end %>
           </div>
         </div>
         <div class="col-md-6 col-sm-6">
           <div class="d-flex align-items-center justify-content-center h-100">
             <%= link_to "Modifier", edit_flat_path(@user_flat), class: "btn btn-flat btn-login" %>
+            <% else %>
+              <p>L'utilisateur n'a pas encore de logement associé.</p>
+              <%= link_to "Remplir les infos", new_flat_path(@user_flat), class: "btn btn-flat btn-login" %>
+            <% end %>
           </div>
         </div>
       </div>

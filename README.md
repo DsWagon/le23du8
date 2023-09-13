@@ -23,3 +23,4 @@
 
 # réparations / bugs
 - [ ] réparer le bug PG violations avec admin
+- [ ] réparer le bug flat
