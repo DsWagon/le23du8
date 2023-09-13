@@ -9,6 +9,7 @@ gem "faker" #fake data
 gem 'htmlbeautifier' #html beautifier
 gem 'motor-admin' #admin panel
 gem 'cancancan' #authorization
+gem 'i18n' #internationalization
 
 
 

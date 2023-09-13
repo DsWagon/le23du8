@@ -9,6 +9,7 @@
 
 - [X] ajouter un système de login personnalisé
 - [X] ajouter un mode dark/light
+- [X] traduction avec l18n pour devise et simple_form
 
 # éléments à ajouter au projet:
 - [ ] ajouter un fichier .gitignore
@@ -26,8 +27,8 @@
 - [ ] améliorer les forms esthétique
 - [ ] revoir les boutons
 - [ ] ajouter des icones à certains éléments
-- [ ] modifier devise.yml pour du français
-- [ ] modifier simple_form.en.yml pour du français
+- [X] modifier devise.yml pour du français
+- [X] modifier simple_form.en.yml pour du français
 
 # fonctions à ajouter
 - [ ] ajouter un système de vote pour les réunions ??

@@ -1,4 +1,7 @@
 {
   "editor.linkedEditing": true,
   "material-icon-theme.hidesExplorerArrows": false
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#0F0"
+  }
 }
