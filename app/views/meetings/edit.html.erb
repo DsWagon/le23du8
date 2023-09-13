@@ -4,19 +4,19 @@
       <h2 style="text-align:center;">Éditer la réunion</h2>
       <%= simple_form_for(@meeting) do |f|  %>
         <div class="form-group mt-3">
-          <%= f.label :title %>
+          <%= f.label :Titre %>
           <%= f.text_field :title, class: "form-control" %>
         </div>
         <div class="form-group mt-3">
-          <%= f.label :description %>
+          <%= f.label :Description %>
           <%= f.text_area :description, class: "form-control" %>
         </div>
         <div class="form-group mt-3">
-          <%= f.label :date %>
+          <%= f.label :Date %>
           <%= f.date_field :date, class: "form-control" %>
         </div>
         <div class="form-group mt-3">
-          <%= f.label :syndic_id %>
+          <%= f.label :Syndic %>
           <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-control" %>
         </div>
         <div class="form-margin">
