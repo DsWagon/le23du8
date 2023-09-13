@@ -10,8 +10,6 @@
 - [X] ajouter un système de login personnalisé
 - [X] ajouter un mode dark/light
 
-
-
 # éléments à ajouter au projet:
 - [ ] ajouter un fichier .gitignore
 - [X] ajouter un fichier TODO.md
@@ -44,3 +42,4 @@
 - [ ] réparer le bug flat
 - [X] fix devise for custom fields edit new
 - [X] fix devise for custom fields edit update
+- [X] An autocomplete attribute of a form field uses a non-standard HTML value. This might prevent the browser from correctly autofilling the form.
