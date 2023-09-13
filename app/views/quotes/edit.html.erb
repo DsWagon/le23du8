@@ -3,32 +3,34 @@
     <div class="col-12 col-md-6">
       <h2 style="text-align:center;">Editer le devis</h2>
       <%= simple_form_for(@quote) do |f| %>
-        <div class="form-group">
-          <%= f.label :company_name %>
+        <div class="form-group mt-3">
+          <%= f.label :Entreprise %>
           <%= f.text_field :company_name, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :description %>
+        <div class="form-group mt-3">
+          <%= f.label :Description %>
           <%= f.text_area :description, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :price %>
+        <div class="form-group mt-3">
+          <%= f.label :Prix %>
           <%= f.number_field :price, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :date_start %>
+        <div class="form-group mt-3">
+          <%= f.label :date_de_début %>
           <%= f.date_field :date_start, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :date_end %>
+        <div class="form-group mt-3">
+          <%= f.label :date_de_fin %>
           <%= f.date_field :date_end, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :meeting_id %>
+        <div class="form-group mt-3">
+          <%= f.label :Réunion %>
           <%= f.collection_select :meeting_id, Meeting.all, :id, :title, prompt: "Sélectionnez une réunion", class: "form-control" %>
         </div>
-        <div class="actions">
-          <%= f.submit "Créer le devis", class: "btn btn-flat" %>
+        <div class="form-margin">
+          <div class="actions">
+            <%= f.submit "Modifier le devis", class: "btn btn-flat" %>
+          </div>
         </div>
       <% end %>
     </div>
