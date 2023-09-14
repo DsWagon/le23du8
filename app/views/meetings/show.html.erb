@@ -1,9 +1,9 @@
 <div class="container">
 
-<%= link_to meetings_path, class: 'btn btn-back' do %>
+<button class="btn btn-back" onclick="window.history.back()">
   <i class="fa-solid fa-arrow-left fa-xs"></i>
-  Retour à l'index des réunions
-<% end %>
+  Retour
+</button>
 
   <div class="row">
     <div class="col-md-12 mb-12">
@@ -19,6 +19,9 @@
             <% @quotes.each do |quote| %>
               <li>
                 <strong>Entreprise : <%= quote.company_name %></strong><br>
+                  <div class="text-right">
+                    <%= link_to "Voir le devis", quote_path(quote), class: 'text-right' %><br>
+                  </div>
                 Description : <%= quote.description %><br>
                 Prix : <%= quote.price %> €<br>
                 <!-- Autres informations sur le devis -->
