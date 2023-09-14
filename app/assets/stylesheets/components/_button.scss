@@ -105,8 +105,9 @@
 .btn-back {
   color: $turquoise; /* Couleur du texte du bouton */
   border: none;
+  text-decoration: none;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .btn-back:hover {
