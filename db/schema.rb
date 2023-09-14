@@ -66,9 +66,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
     t.text "title"
     t.text "description"
     t.date "date"
-    t.bigint "syndic_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "syndic_id"
     t.index ["syndic_id"], name: "index_meetings_on_syndic_id"
   end
 
@@ -307,7 +307,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
   add_foreign_key "comments", "meetings"
   add_foreign_key "comments", "users"
   add_foreign_key "flats", "users"
-  add_foreign_key "meetings", "syndics"
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
   add_foreign_key "motor_alerts", "motor_queries", column: "query_id"
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"
