@@ -2,22 +2,20 @@ Rails.application.routes.draw do
   authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/admin'
     get "admin", to: "pages#admin"
-    resources :quotes
     resources :meetings do
-      resources :comments, only: [:new, :create]
     end
     resources :flats, only: [:new, :create, :edit, :update] do
     end
+    resources :quotes
   end
 
   authenticated :user, ->(user) { user.vip? } do
     get "vip", to: "pages#vip"
-    resources :quotes
     resources :meetings do
-      resources :comments, only: [:new, :create]
     end
     resources :flats, only: [:new, :create, :edit, :update] do
     end
+    resources :quotes
   end
 
   devise_for :users
@@ -25,7 +23,6 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "legal", to: "pages#legal"
   resources :meetings, only: [:index, :show] do
-    resources :comments, only: [:new, :create]
   end
   resources :flats, only: [:new, :create, :edit, :update] do
   end

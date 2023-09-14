@@ -21,7 +21,7 @@ class MeetingsController < ApplicationController
 
   def show
     @meeting = Meeting.find(params[:id])
-    @comment = Comment.new
+    @quotes = @meeting.quotes
   end
 
   def edit

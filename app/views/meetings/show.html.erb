@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Show de la réunion</h1>
+        <%= link_to 'Retour vers toutes les réunions', meetings_path, class: 'btn btn-flat' %>
+
   <div class="row">
     <div class="col-md-12 mb-12">
       <div class="card">
@@ -8,37 +9,20 @@
         <div class="card-body">
           <p class="card-text">Syndic : <%= @meeting.syndic.name %></p>
           <p class="card-text"><%= @meeting.description %></p>
-          <%= link_to 'Voir les devis', quotes_path, class: 'btn btn-primary' %>
-          <%= link_to 'Editer la réunion', edit_meeting_path, class: 'btn btn-primary' %>
-          <%= link_to "Delete",meeting_path(@meeting), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          <% if false %>
-            <h1>Commentaires</h1>
-            <p><%= @meeting.comments.count %></p>
-            <% @meeting.comments.each do |comment| %>
-              <p><%= comment.user.first_name %></p>
-              <p><%= comment.content %></p>
+          <hr>
+          <h2>Les devis liés à cette réunion :</h2>
+          <ul>
+            <% @quotes.each do |quote| %>
+              <li>
+                <strong>Entreprise : <%= quote.company_name %></strong><br>
+                Description : <%= quote.description %><br>
+                Prix : <%= quote.price %> €<br>
+                <!-- Autres informations sur le devis -->
+              </li>
             <% end %>
-          <% end %>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
- <% if false %>
-<div class="container">
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-6">
-      <div class="card">
-        <%= simple_form_for [@meeting, @comment] do |f| %>
-          <div class="card-body">
-            <%= f.input :content, as: :text, label: "Écrivez votre commentaire", class: "form-control" %>
-          </div>
-          <div class="card-footer text-center">
-            <%= f.button :submit, value: "Envoyer", class: 'btn btn-primary' %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>

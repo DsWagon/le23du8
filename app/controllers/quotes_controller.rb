@@ -3,8 +3,7 @@ class QuotesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @quotes = Quote.all
-    @quotes = Quote.all.order(date_start: :desc)
+    @quotes = Quote.includes(:meeting).order("meetings.id DESC")
   end
 
   def new
