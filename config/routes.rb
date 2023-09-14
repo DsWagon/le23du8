@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :meetings do
       resources :comments, only: [:new, :create]
     end
-    resources :flats, only: [:new, :edit, :update] do
+    resources :flats, only: [:new, :create, :edit, :update] do
     end
   end
 
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :meetings do
       resources :comments, only: [:new, :create]
     end
-    resources :flats, only: [:new, :edit, :update] do
+    resources :flats, only: [:new, :create, :edit, :update] do
     end
   end
 
@@ -24,10 +24,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   get "profile", to: "pages#profile"
+  get "legal", to: "pages#legal"
   resources :meetings, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end
-  resources :flats, only: [:new, :edit, :update] do
+  resources :flats, only: [:new, :create, :edit, :update] do
   end
   resources :quotes, only: [:index, :show] do
   end

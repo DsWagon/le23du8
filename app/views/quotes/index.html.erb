@@ -7,8 +7,6 @@
     <button type="button" class="btn btn-flat mx-2" data-action="quote-view#toggleTableView"><i class="fa-solid fa-table fa-lg me-3"></i>Vue en tableau</button>
   </div>
 
-
-
   <div class="row">
     <% @quotes.each do |quote| %>
       <div class="col-md-12 mb-12 card-view " data-quote-view-target="cardView">
@@ -28,37 +26,44 @@
         </div>
       </div>
     <% end %>
-  </div>
+    </div>
 
 <div class="table-view" style="display: none;" data-quote-view-target="tableView">
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Réunion</th>
-      <th scope="col">Entreprise</th>
-      <th scope="col">prix</th>
-      <th scope="col">Supprimer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @quotes.each_with_index do |quote, index| %>
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
-        <th scope="row"><%= index + 1 %></th>
-        <td><%= quote.meeting_id %></td>
-        <td><%= quote.company_name %></td>
-        <td><%= quote.price %></td>
-        <td style="text-align: center; vertical-align: middle;">
-          <%= link_to quote_path(quote), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-            <i class="fa-solid fa-trash fa-lg circle-icon" style="color: #e7081f;"></i>
-          <% end %>
-        </td>
+        <th scope="col">#</th>
+        <th scope="col">Réunion</th>
+        <th scope="col">Entreprise</th>
+        <th scope="col">Lien</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Éditer</th>
+        <th scope="col">Supprimer</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @quotes.each_with_index do |quote, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= quote.meeting_id %></td>
+          <td><%= quote.company_name %></td>
+          <td><%= link_to "Lien", quote %></td>
+          <td><%= quote.price %> €</td>
+          <td style="text-align: center; vertical-align: middle;">
+            <%= link_to edit_quote_path(quote) do %>
+              <i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i>
+            <% end %>
+          </td>
+          <td style="text-align: center; vertical-align: middle;">
+            <%= link_to quote_path(quote), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 <% end %>
 
 <%# proposer un affichage différent en fonction du choix de l'utilisateur %>

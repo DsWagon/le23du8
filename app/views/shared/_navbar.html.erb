@@ -20,8 +20,18 @@
       </div>
       <div class="offcanvas-header">
         <% if user_signed_in? %>
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="display: inline;"><strong><%= current_user.role.capitalize %></strong></h5>
-          <% end %>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="display: inline;">
+            <strong>Votre rôle :</strong>
+            <% case current_user.role %>
+              <% when "admin" %>
+                Super administrateur
+              <% when "vip" %>
+                Administrateur
+              <% else %>
+                Utilisateur
+            <% end %>
+          </h5>
+        <% end %>
       </div>
       <hr>
       <div class="offcanvas-body">
@@ -36,26 +46,17 @@
               <% if current_user.admin? %>
                 <%= link_to "/admin", class: "btn btn-flat" do %>
                   <i class="fa-solid fa-gear fa-lg me-2"></i>
-                  Admin
+                  SuperAdministration
                 <% end %>
               <% elsif current_user.vip? %>
                 <%= link_to "/vip", class: "btn btn-flat" do %>
-                  <i class="fa-solid fa-gear fa-lg me-2"></i>
-                  Dashboard
+                  <i class="fa-solid fa-gears fa-lg me-2"></i>
+                  Administration
                 <% end %>
-              <% elsif %>
-                <%= link_to "/user", class: "btn btn-flat" do %>
-                  <i class="fa-solid fa-gear fa-lg me-2"></i>
-                  User
-                <% end %>
-            <% else %>
-              <%= link_to "/login", class: "btn btn-flat" do %>
-                <i class="fa-solid fa-sign-in-alt fa-lg me-2"></i>
-                Login
-              <% end %>
             <% end %>
           </li>
-          <li class="nav-item">
+          <hr>
+          <li class="nav-item mt-5">
             <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-flat" do %>
               <i class="fa-solid fa-right-from-bracket fa-lg me-2"></i>
               Se déconnecter
@@ -72,3 +73,40 @@
   <% end %>
   </div>
 </nav>
+<nav>
+<div class="container mt-2">
+  <div class="d-flex justify-content-center">
+    <%= link_to "/", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-house fa-sm"></i>
+    <% end %>
+    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-calendar-days fa-sm"></i>
+      Réunions
+    <% end %>
+    <%= link_to "/quotes", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-file-invoice fa-sm"></i>
+      Devis
+    <% end %>
+    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-calendar-days fa-sm"></i>
+      Annonces
+    <% end %>
+    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-calendar-days fa-sm"></i>
+      Publier une annonce
+    <% end %>
+    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-calendar-days fa-sm"></i>
+      Articles
+    <% end %>
+    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-calendar-days fa-sm"></i>
+      Publier un article
+    <% end %>
+    <%= link_to "/vip", class: "btn btn-flat mx-2" do %>
+      <i class="fa-solid fa-gears fa-sm"></i>
+      Administration
+    <% end %>
+  </div>
+</nav>
+<hr class="dash">
