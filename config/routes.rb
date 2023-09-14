@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   get "profile", to: "pages#profile"
+  get "legal", to: "pages#legal"
   resources :meetings, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end

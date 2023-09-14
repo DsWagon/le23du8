@@ -1,3 +1,11 @@
+[data-bs-theme=light] .footer {
+  background-color: white;
+}
+
+[data-bs-theme=dark] .footer {
+  background-color: #2b3036;
+}
+
 .footer {
   align-items: center;
   justify-content: space-between;
