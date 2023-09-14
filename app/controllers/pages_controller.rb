@@ -11,7 +11,6 @@ class PagesController < ApplicationController
     @user = current_user
     @user_flat = Flat.find_by(user_id: @current_user.id)
     @syndic = Syndic.first
-
   end
 
   def vip

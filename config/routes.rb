@@ -3,8 +3,6 @@ Rails.application.routes.draw do
     mount Motor::Admin => '/admin'
     get "admin", to: "pages#admin"
     resources :quotes
-    resources :syndics, only: [:index, :show, :new, :create, :edit, :update] do
-    end
     resources :meetings do
       resources :comments, only: [:new, :create]
     end
