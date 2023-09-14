@@ -44,3 +44,6 @@
 - [X] fix devise for custom fields edit new
 - [X] fix devise for custom fields edit update
 - [X] An autocomplete attribute of a form field uses a non-standard HTML value. This might prevent the browser from correctly autofilling the form.
+
+
+supression du compte à mentionner dans le rgpd
