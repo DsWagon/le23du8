@@ -20,10 +20,13 @@
               <li>
                 <strong>Entreprise : <%= quote.company_name %></strong><br>
                   <div class="text-right">
-                    <%= link_to "Voir le devis", quote_path(quote), class: 'text-right' %><br>
                   </div>
                 Description : <%= quote.description %><br>
                 Prix : <%= quote.price %> €<br>
+                    <%= link_to quote_path(quote), class: 'btn btn-back' do %><br>
+                      <i class="fa-solid fa-arrow-right fa-sm"></i>
+                      Voir le devis
+                    <% end %>
                 <!-- Autres informations sur le devis -->
               </li>
             <% end %>
