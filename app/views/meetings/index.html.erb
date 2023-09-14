@@ -1,7 +1,7 @@
 <% if user_signed_in? && (current_user.vip? || current_user.user? || current_user.admin?) %>
 <div class="container" data-controller="meeting-view">
   <div class="mt-3">
-  <h3>Liste de toutes les réunions</h3>
+  <h3 class="my-3">Liste de toutes les réunions</h3>
     <div class="btn-group mt-1" role="group">
       <button type="button" class="btn btn-flat mx-2" data-action="meeting-view#toggleCardView"><i class="fa-solid fa-list fa-xl me-3"></i></i>Vue en liste</button>
       <button type="button" class="btn btn-flat mx-2" data-action="meeting-view#toggleTableView"><i class="fa-solid fa-table fa-lg me-3"></i>Vue en tableau</button>

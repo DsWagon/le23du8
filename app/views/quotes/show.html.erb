@@ -1,7 +1,8 @@
 <div class="container">
-  <h1>Show de la quote</h1>
-      <%= link_to 'Retour vers tous les devis', quotes_path, class: 'btn btn-flat' %>
-
+<%= link_to quotes_path, class: 'btn btn-back' do %>
+  <i class="fa-solid fa-arrow-left fa-xs"></i>
+  Retour à l'index des devis
+<% end %>
 
   <div class="row">
     <div class="col-md-12 mb-12">

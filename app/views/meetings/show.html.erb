@@ -1,5 +1,9 @@
 <div class="container">
-        <%= link_to 'Retour vers toutes les réunions', meetings_path, class: 'btn btn-flat' %>
+
+<%= link_to meetings_path, class: 'btn btn-back' do %>
+  <i class="fa-solid fa-arrow-left fa-xs"></i>
+  Retour à l'index des réunions
+<% end %>
 
   <div class="row">
     <div class="col-md-12 mb-12">
