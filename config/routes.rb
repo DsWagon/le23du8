@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
-  get "about", to: "pages#about"
   get "profile", to: "pages#profile"
   get "legal", to: "pages#legal"
   resources :meetings, only: [:index, :show] do
