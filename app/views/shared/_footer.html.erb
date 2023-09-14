@@ -1,11 +1,32 @@
 <footer class="footer">
-<div class="row d-flex justify-content-center">
-  <div class="d-flex justify-content-center">© 2023 Le23du8 DsL. Tous droits réservés
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-md-2 p-0">
+        <%= link_to "/", class: "footer-brand" do %>
+          <%= image_tag "content.png" %>
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="text-center">
+          © 2023 Le23du8 DsL. Tous droits réservés
+        </div>
+        <div class="text-center">
+          <a href="mailto:serrada@gmail.com" style="text-decoration: none;">
+            <i class="fa-regular fa-envelope fa-xs"></i> Contact
+          </a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center">
+          Conditions d'utilisation
+        </div>
+        <div class="text-center">
+          Vie privée(RGPD)
+        </div>
+        <div class="text-center">
+          À propos
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="d-flex justify-content-between">
-    <div>Contacts</div>
-    <div>Vie privée(RGPD)</div>
-    <div>Conditions d'utilisation</div>
-  </div>
-</div>
-
+</footer>

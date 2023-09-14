@@ -1,17 +1,22 @@
 .footer {
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0, 0, 0, 0.3);
+  height: 80px;
+  border-top: 1px solid $turquoise;
+  padding: 0px 20px;
   position: fixed; /* Utilisez une position fixe pour que le footer reste en bas */
   bottom: 0; /* Fixez le bas du footer en bas de la fenêtre */
   left: 0;
   right: 0;
   z-index: 999; /* Vous pouvez ajuster la valeur du z-index selon les besoins */
-  width: 100%; /* Assurez-vous que le footer s'étend sur toute la largeur */
+  width: 100%;
+  font-size: 13px;
 }
+.footer .footer-brand img {
+  width: 110px;
+  align-items: center;
+}
+
 
 /* Le reste de votre CSS reste inchangé */
 .footer-links {
@@ -19,18 +24,6 @@
   align-items: center;
 }
 
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-
 .footer-links a:hover {
   opacity: 1;
-}
-
-.footer .fa-heart {
-  color: #D23333;
 }
