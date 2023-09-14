@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :about, :legal, :profile, :admin, :vip ]
+  skip_before_action :authenticate_user!, only: [ :home, :legal, :profile, :admin, :vip ]
 
   def home
-  end
-
-  def about
   end
 
   def legal
@@ -14,7 +11,6 @@ class PagesController < ApplicationController
     @user = current_user
     @user_flat = Flat.find_by(user_id: @current_user.id)
     @syndic = Syndic.first
-
   end
 
   def vip

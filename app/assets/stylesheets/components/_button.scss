@@ -100,3 +100,17 @@
 [data-theme="dark"] .fa-sun {
   display: none;
 }
+
+
+.btn-back {
+  color: $turquoise; /* Couleur du texte du bouton */
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.btn-back:hover {
+  color: $turquoise;
+  text-decoration: underline;
+}

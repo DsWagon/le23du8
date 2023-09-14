@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>Show de la quote</h1>
+
+  <button class="btn btn-back" onclick="window.history.back()">
+    <i class="fa-solid fa-arrow-left fa-xs"></i>
+    Retour
+  </button>
+
   <div class="row">
     <div class="col-md-12 mb-12">
       <div class="card">
@@ -13,13 +18,10 @@
           <p><%= @quote.date_end %></p>
           <p><%= @quote.meeting.title%></p>
           <hr>
-          <%= link_to 'Voir les devis', quotes_path, class: 'btn btn-flat' %>
-          <%= link_to edit_quote_path(@quote) do %>
-              <i class="fa-solid fa-edit fa-lg circle-icon-edit mx-2" style="color: #fd7e14;"></i>
-            <% end %>
-          <%= link_to quote_path(@quote), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fa-solid fa-trash fa-lg circle-icon-delete mx-2" style="color: #e7081f;"></i>
-            <% end %>
+          <%= link_to meeting_path(@quote.meeting), class: 'btn btn-back' do %>
+            <i class="fa-solid fa-arrow-right fa-sm"></i>
+            Voir la réunion
+          <% end %>
         </div>
       </div>
     </div>

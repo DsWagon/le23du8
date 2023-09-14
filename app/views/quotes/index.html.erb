@@ -1,7 +1,7 @@
 <% if user_signed_in? && (current_user.vip? || current_user.user? || current_user.admin?) %>
 <div class="container" data-controller="quote-view">
   <div class="mt-3">
-  <h3>Liste des devis</h3>
+  <h3 class="my-3">Liste des devis</h3>
     <div class="btn-group mt-1" role="group">
     <button type="button" class="btn btn-flat mx-2" data-action="quote-view#toggleCardView"><i class="fa-solid fa-list fa-xl me-3"></i>Vue en liste</button>
     <button type="button" class="btn btn-flat mx-2" data-action="quote-view#toggleTableView"><i class="fa-solid fa-table fa-lg me-3"></i>Vue en tableau</button>
@@ -11,28 +11,44 @@
     <% @quotes.each do |quote| %>
       <div class="col-md-12 mb-12 card-view " data-quote-view-target="cardView">
         <div class="card">
-          <div class="card-header"><%= quote.meeting.title%>, <%= quote.company_name %>
+          <div class="card-header">
+          <div class="row">
+              <div class="col">
+                Titre : <%= quote.meeting.title%>
+              </div>
+              <div class="col">
+                Entreprise : <%= quote.company_name %>
+              </div>
+            </div>
           </div>
           <div class="card-body">
-            <p class="card-text">Syndic : <%= quote.price %></p>
             <p class="card-text"><%= quote.description %></p>
-            <p><%= quote.description %></p>
-            <p><%= quote.price %></p>
-            <p><%= quote.date_start %></p>
-            <p><%= quote.date_end %></p>
-            <hr>
-            <%= link_to 'Voir le devis', quote, class: 'btn btn-primary' %>
+            <div class="row">
+              <div class="col">
+                <p>Prix : <%= quote.price %> €</p>
+              </div>
+              <div class="col">
+                <p>Date de début des travaux : <%= quote.date_start %></p>
+              </div>
+              <div class="col">
+                <p>Date de fin des travaux : <%= quote.date_end %></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-end">
+            <%= link_to 'Voir le devis', quote, class: 'btn btn-flat' %>
           </div>
         </div>
       </div>
     <% end %>
     </div>
 
+
+
 <div class="table-view" style="display: none;" data-quote-view-target="tableView">
   <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Réunion</th>
         <th scope="col">Entreprise</th>
         <th scope="col">Lien</th>
@@ -44,7 +60,6 @@
     <tbody>
       <% @quotes.each_with_index do |quote, index| %>
         <tr>
-          <th scope="row"><%= index + 1 %></th>
           <td><%= quote.meeting_id %></td>
           <td><%= quote.company_name %></td>
           <td><%= link_to "Lien", quote %></td>
