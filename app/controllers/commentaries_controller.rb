@@ -16,6 +16,24 @@ class CommentariesController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:post_id])
+    @commentary = Commentary.find params[:id]
+  end
+
+  def update
+    @post = Post.find(params[:post_id])
+    @commentary = Commentary.find params[:id]
+    @commentary.update(commentary_params)
+    redirect_to post_path(@commentary.post)
+  end
+
+  def destroy
+    @commentary = Commentary.find params[:id]
+    @commentary.destroy
+    redirect_to post_path(@commentary.post)
+  end
+
   private
 
   def commentary_params

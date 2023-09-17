@@ -21,6 +21,13 @@
           <small><em class="text-muted"><%= commentary.user %></em></small>
           <small><em class="text-muted">il y a <%= distance_of_time_in_words_to_now(commentary.created_at) %></em></small>
           <p class="mb-0"><%= commentary.content %></p>
+            <%= link_to [@post, commentary], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
+            <% end %>
+            <%= link_to "Éditer ce commentaire", edit_post_commentary_path(@post, commentary) %>
+
+
+
         </div>
         <hr class="my-3">
       <% end %>
@@ -30,6 +37,7 @@
             <%= f.input :content, as: :text, label: "Ecrivez votre commentaire"%>
             <%= f.button :submit, value: "Poster", class:"btn btn-primary" %>
         <% end %>
+
       </div>
     </div>
     </div>
