@@ -9,3 +9,29 @@
               <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
             <% end %>
 </div>
+
+<hr class="smallblue small mt-5">
+    <div class="row d-flex">
+      <h3>Commentaires <%= @post.commentaries.count %></h3>
+      <% if @post.commentaries.empty? %>
+        <small><em class="text-muted">Soyez le premier à commenter cet article</em></small>
+      <% end %>
+      <% @post.commentaries.each do |commentary| %>
+        <div>
+          <small><em class="text-muted"><%= commentary.user %></em></small>
+          <small><em class="text-muted">il y a <%= distance_of_time_in_words_to_now(commentary.created_at) %></em></small>
+          <p class="mb-0"><%= commentary.content %></p>
+        </div>
+        <hr class="my-3">
+      <% end %>
+    <div class="row d-flex">
+      <div class="bg-white rounded p-3">
+        <%= simple_form_for [@post, @commentary] do |f| %>
+            <%= f.input :content, as: :text, label: "Ecrivez votre commentaire"%>
+            <%= f.button :submit, value: "Poster", class:"btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+
+</div>

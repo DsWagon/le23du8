@@ -1,18 +1,8 @@
 Rails.application.routes.draw do
-  get 'commentarys/index'
-  get 'commentarys/show'
-  get 'commentarys/new'
-  get 'commentarys/create'
-  get 'commentarys/edit'
-  get 'commentarys/update'
-  get 'commentarys/destroy'
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/new'
-  get 'posts/create'
-  get 'posts/edit'
-  get 'posts/update'
-  get 'posts/destroy'
+
+  resources :posts do
+    resources :commentaries
+  end
 
   authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/admin'
