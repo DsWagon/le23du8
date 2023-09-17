@@ -1,4 +1,4 @@
-<nav class="navbar bg-body-tertiary fixed-top navbar-background">
+<nav class="navbar bg-body-tertiary fixed-top navbar-background ">
   <div class="container-fluid">
     <div class="d-flex align-items-end">
       <%= link_to "/", class: "navbar-brand" do %>
@@ -74,39 +74,5 @@
   </div>
 </nav>
 <nav>
-<div class="container mt-2">
-  <div class="d-flex justify-content-center">
-    <%= link_to "/", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-house fa-sm"></i>
-    <% end %>
-    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-calendar-days fa-sm"></i>
-      Réunions
-    <% end %>
-    <%= link_to "/quotes", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-file-invoice fa-sm"></i>
-      Devis
-    <% end %>
-    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-calendar-days fa-sm"></i>
-      Annonces
-    <% end %>
-    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-calendar-days fa-sm"></i>
-      Publier une annonce
-    <% end %>
-    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-calendar-days fa-sm"></i>
-      Articles
-    <% end %>
-    <%= link_to "/meetings", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-calendar-days fa-sm"></i>
-      Publier un article
-    <% end %>
-    <%= link_to "/vip", class: "btn btn-flat mx-2" do %>
-      <i class="fa-solid fa-gears fa-sm"></i>
-      Administration
-    <% end %>
-  </div>
-</nav>
-<hr class="dash">
+
+      <%= render "shared/second_navbar" %>
