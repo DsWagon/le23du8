@@ -12,11 +12,11 @@
   border-top: 1px solid $turquoise;
   max-height: 80px;
   padding: 0px 20px;
-  position: fixed; /* Utilisez une position fixe pour que le footer reste en bas */
-  bottom: 0; /* Fixez le bas du footer en bas de la fenêtre */
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999; /* Vous pouvez ajuster la valeur du z-index selon les besoins */
+  z-index: 999; 
   width: 100%;
   font-size: 13px;
 
