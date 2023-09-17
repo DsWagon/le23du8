@@ -1,2 +1,21 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<!-- app/views/posts/new.html.erb -->
+<h1>Créer un Nouveau Post</h1>
+
+<%= simple_form_for @post do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, Post.categories.keys %>
+  </div>
+
+  <%= f.submit "Créer le Post", class: "btn btn-primary" %>
+<% end %>

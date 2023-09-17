@@ -10,5 +10,15 @@
         <% end %>
       </div>
     </div>
+    <h1>Derniers Posts</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h2><%= post.title %></h2>
+      <p><%= post.content.truncate(120) %></p>
+      <!-- Ajoutez d'autres détails du post que vous souhaitez afficher -->
+    </li>
+  <% end %>
+</ul>
   </div>
 </div>

@@ -1,2 +1,23 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
+
+
+<div class="container-fluid">
+  <h1 class="text-center mx-2 my-5"><strong>Retrouvez ici l'intégralité de nos articles !</strong></h1>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="card mx-4 mb-5" style="width: 18rem;">
+        <div class="card-body">
+          <div class="card-quarter">
+            <h4 class="card-title text-start"><%= post.title %><%= post.category%></h4>
+            <p>Par <%= post.user %></p>
+            <p class="card-text flex-grow-1"><%= post.content.truncate(120) %></p>
+            <%= link_to "Lire l'article", post_path(post), class: "btn btn-primary" %>
+            
+            <hr>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

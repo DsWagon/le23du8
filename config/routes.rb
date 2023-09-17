@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'posts/edit'
   get 'posts/update'
   get 'posts/destroy'
+
   authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/admin'
     get "admin", to: "pages#admin"
@@ -41,6 +42,8 @@ Rails.application.routes.draw do
   resources :flats, only: [:new, :create, :edit, :update] do
   end
   resources :quotes, only: [:index, :show] do
+  end
+  resources :posts do
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

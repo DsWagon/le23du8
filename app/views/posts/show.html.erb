@@ -1,2 +1,11 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container-md">
+  <div class="row d-flex">
+  <h1 class= "text-center my-5"><%= @post.title  %></h1>
+  <h5 class= "text-start mb-4">Par <em><%= @post.user %><em>. Publié le <em><%= @post.created_at.strftime("%d/%m/%Y")%>. Catégorie : <%= @post.category %></em></h5>
+  <p><%= @post.content %></p>
+  <p class="text-muted"><%= link_to "Retour à la liste des posts", posts_path %></p>
+  <p class="text-muted"><%= link_to "Editer mon post", edit_post_path(@post) %></p>
+            <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
+            <% end %>
+</div>

@@ -1,2 +1,21 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<!-- app/views/posts/edit.html.erb -->
+<h1>Éditer le Post</h1>
+
+<%= form_for @post do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, Post.categories.keys %>
+  </div>
+
+  <%= f.submit "Mettre à jour le Post", class: "btn btn-primary" %>
+<% end %>
