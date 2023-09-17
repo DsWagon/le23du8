@@ -2,7 +2,19 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    valid_categories = [:vente, :achat, :don]
+
+    if params[:category].present?
+      if valid_categories.include?(params[:category].to_sym)
+        @posts = Post.where(category: params[:category])
+      elsif params[:category] == "annonces"
+        @posts = Post.where(category: valid_categories)
+      else
+        # Gérer d'autres catégories si nécessaire
+      end
+    else
+      @posts = Post.where(category: valid_categories)
+    end
   end
 
   def new
