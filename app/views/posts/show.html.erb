@@ -14,12 +14,12 @@
           </div>
         <div class="card-end">
           <p class="text-muted"><%= link_to "Retour à la liste des posts", posts_path %></p>
-                  <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-                    <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
-                  <% end %>
-                  <%= link_to edit_post_path(@post) do %>
-                    <i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i>
-                  <% end %>
+            <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash fa-lg circle-icon-delete mx-1" style="color: #e7081f;"></i>
+            <% end %>
+            <%= link_to edit_post_path(@post) do %>
+              <i class="fa-solid fa-edit fa-lg circle-icon-edit mx-1" style="color: #fd7e14;"></i>
+            <% end %>
         </div>
       </div>
     </div>
