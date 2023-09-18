@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    valid_categories = [:vente, :achat, :don, :news, :evenement]
-    default_category = :news
+    valid_categories = [:vente, :achat, :don, :news]
+    default_category = [:vente, :achat, :don]
 
     case params[:category]
     when *valid_categories.map(&:to_s) # Vérifie si la catégorie est valide
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     when "annonces"
       @posts = Post.where(category: [:vente, :achat, :don])
     when "actualites"
-      @posts = Post.where(category: [:news, :evenement])
+      @posts = Post.where(category: [:news])
     else
       # Gérer d'autres catégories si nécessaire
       @posts = Post.where(category: default_category)
