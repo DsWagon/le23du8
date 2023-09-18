@@ -15,7 +15,7 @@
   <% @posts.each do |post| %>
     <li>
       <h2><%= post.title %></h2>
-      <p><%= post.content.truncate(120) %></p>
+      <p><%= post.content %></p>
       <!-- Ajoutez d'autres détails du post que vous souhaitez afficher -->
     </li>
   <% end %>
