@@ -1,24 +1,37 @@
-<div class="container-home d-flex justify-content-center align-items-center flex-wrap p-2">
   <div class="row mt-5">
-  <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-12 ">
-        <h1 class="text-center">Bienvenue sur <strong class="highlight">Le23du8</strong> !</h1>
-        <p class="text-center">Notre site a été spécialement conçu pour vous offrir un accès facile à toutes les informations concernant notre copropriété, ainsi qu'à une multitude de ressources utiles.</p>
-        <% if user_signed_in? %>
-          <p class="text-center">Votre rôle : <%= current_user.role %></p>
+    <div class="col-md-9 flex-column">
+      <div class="row">
+        <% @posts.each do |post| %>
+          <div class="col-md-12 mb-12 card-view">
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <h3 class="text-center"><%= post.category %></h3>
+                  <div class="col">
+                    <%= post.title %>
+                  </div>
+                  <div class="col">
+                    <p>Par : <%= post.user.first_name %> <%= post.user.last_name %>   Créé le : <%= post.created_at.strftime('%d %B %Y à %H:%M') %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><%= post.content %></p>
+                <div class="card-end">
+                  <%= link_to "Lire", post_path(post), class: "btn btn-flat" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
-    <h1>Derniers Posts</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <h2><%= post.title %></h2>
-      <p><%= post.content %></p>
-      <!-- Ajoutez d'autres détails du post que vous souhaitez afficher -->
-    </li>
-  <% end %>
-</ul>
+    <div class="col-md-3">
+      <h1 class="text-center">Bienvenue sur <strong class="highlight">Le23du8</strong> !</h1>
+      <p class="text-center">Notre site a été spécialement conçu pour vous offrir un accès facile à toutes les informations concernant notre copropriété, ainsi qu'à une multitude de ressources utiles.</p>
+      <% if user_signed_in? %>
+        <p class="text-center">Votre rôle : <%= current_user.role %></p>
+      <% end %>
+      <hr class="dash">
+    </div>
   </div>
-</div>
