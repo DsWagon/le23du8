@@ -9,16 +9,17 @@
 .footer {
   align-items: center;
   justify-content: space-between;
-  height: 80px;
   border-top: 1px solid $turquoise;
+  max-height: 80px;
   padding: 0px 20px;
-  position: fixed; /* Utilisez une position fixe pour que le footer reste en bas */
-  bottom: 0; /* Fixez le bas du footer en bas de la fenêtre */
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999; /* Vous pouvez ajuster la valeur du z-index selon les besoins */
+  z-index: 999; 
   width: 100%;
   font-size: 13px;
+
 }
 .footer .footer-brand img {
   width: 110px;
@@ -34,4 +35,17 @@
 
 .footer-links a:hover {
   opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .footer .col-md-2, .footer .col-md-8 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    flex-direction: column;
+  }
+}
+.footer {
+  max-height: 100vh;
+  overflow-y: auto;
 }

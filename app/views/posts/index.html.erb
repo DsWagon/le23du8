@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <h1 class="text-center mx-2 my-5"><strong>Retrouvez ici l'intégralité de nos articles !</strong></h1>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="card mx-4 mb-5" style="width: 18rem;">
+        <div class="card-body">
+          <div class="card-quarter">
+            <h4 class="card-title text-start"><%= post.title %></h4>
+            <p>Catégorie : <%= post.category %></p>
+            <p>Par : <%= post.user.first_name %> <%= post.user.last_name %></p>
+            <p class="card-text flex-grow-1"><%= post.content.truncate(120) %></p>
+            <hr>
+            <%= link_to "Lire l'article", post_path(post), class: "btn btn-flat" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

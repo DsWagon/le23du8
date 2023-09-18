@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :posts do
+    resources :commentaries
+  end
+
   authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/admin'
     get "admin", to: "pages#admin"

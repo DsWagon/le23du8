@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :legal, :profile, :admin, :vip ]
 
   def home
+    @posts = Post.all.limit(5)
   end
 
   def legal

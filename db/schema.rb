@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_17_144305) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,14 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "commentaries", force: :cascade do |t|
     t.text "content"
+    t.bigint "post_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "meeting_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["meeting_id"], name: "index_comments_on_meeting_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["post_id"], name: "index_commentaries_on_post_id"
+    t.index ["user_id"], name: "index_commentaries_on_user_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -265,6 +265,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
     t.index ["name"], name: "motor_tags_name_unique_index", unique: true
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "category"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "quotes", force: :cascade do |t|
     t.text "company_name"
     t.text "description"
@@ -304,8 +314,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "meetings"
-  add_foreign_key "comments", "users"
+  add_foreign_key "commentaries", "posts"
+  add_foreign_key "commentaries", "users"
   add_foreign_key "flats", "users"
   add_foreign_key "meetings", "syndics"
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
@@ -313,5 +323,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_093826) do
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"
   add_foreign_key "motor_note_tag_tags", "motor_notes", column: "note_id"
   add_foreign_key "motor_taggable_tags", "motor_tags", column: "tag_id"
+  add_foreign_key "posts", "users"
   add_foreign_key "quotes", "meetings"
 end

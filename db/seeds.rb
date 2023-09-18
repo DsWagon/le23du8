@@ -142,16 +142,14 @@ quotes = []
   )
 end
 
-# comment1 = Comment.create!(
-#   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-#   user: david,
-#   meeting: meeting1
-# )
-
-# comment2 = Comment.create!(
-#   content: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-#   user: david,
-#   meeting: meeting2
-# )
+10.times do
+  post = Post.new(
+    title: Faker::Lorem.sentence,
+    content: Cicero.paragraphs(20),
+    category: Post.categories.keys.sample,
+    user: users.shift
+  )
+  post.save
+end
 
 puts "Finished!"

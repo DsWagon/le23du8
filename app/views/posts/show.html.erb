@@ -1,0 +1,47 @@
+<div class="container-md">
+  <div class="row d-flex">
+  <h1 class= "text-center my-5"><%= @post.title  %></h1>
+  <h5 class= "text-start mb-4">Par <em><%= @post.user.first_name %> <%= @post.user.last_name %><em>. Publié le <em><%= @post.created_at.strftime("%d/%m/%Y")%>. Catégorie : <%= @post.category %></em></h5>
+  <p><%= @post.content %></p>
+  <p class="text-muted"><%= link_to "Retour à la liste des posts", posts_path %></p>
+            <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
+            <% end %>
+            <%= link_to edit_post_path(@post) do %>
+              <i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i>
+            <% end %>
+</div>
+
+<hr class="smallblue small mt-5">
+    <div class="row d-flex">
+      <h4>Commentaires <%= @post.commentaries.count %></h4>
+      <% if @post.commentaries.empty? %>
+        <small><em class="text-muted">Soyez le premier à commenter cet article</em></small>
+      <% end %>
+      <% @post.commentaries.each do |commentary| %>
+        <div>
+          <small><em class="text-muted"><%= commentary.user.first_name %></em></small>
+          <small><em class="text-muted">il y a <%= distance_of_time_in_words_to_now(commentary.created_at) %></em></small>
+          <p class="mb-0"><%= commentary.content %></p>
+            <%= link_to [@post, commentary], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
+            <% end %>
+            <%= link_to "Éditer ce commentaire", edit_post_commentary_path(@post, commentary) %>
+
+
+
+        </div>
+        <hr class="my-3">
+      <% end %>
+    <div class="row d-flex">
+      <div class="bg-white rounded p-3">
+        <%= simple_form_for [@post, @commentary] do |f| %>
+            <%= f.input :content, as: :text, label: "Ecrivez votre commentaire"%>
+            <%= f.button :submit, value: "Poster", class:"btn btn-primary" %>
+        <% end %>
+
+      </div>
+    </div>
+    </div>
+
+</div>

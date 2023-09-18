@@ -1,0 +1,40 @@
+<div class="container-second-navbar mt-2 d-flex justify-content-center align-items-center flex-wrap p-2">
+  <%= link_to "/", class: "btn btn-flat mx-2" do %>
+    <i class="fa-solid fa-house fa-sm"></i>
+  <% end %>
+  <div class="dropdown-center">
+    <a class="btn btn-flat mx-2 my-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-building fa-sm"></i> Copro
+    </a>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="<%= meetings_path %>"><i class="fa-solid fa-calendar-days fa-sm"></i> Réunions</a></li>
+      <li><a class="dropdown-item" href="<%= quotes_path %>"><i class="fa-solid fa-file-invoice fa-sm"></i> Devis</a></li>
+  </ul>
+  </div>
+  <div class="dropdown-center">
+    <a class="btn btn-flat mx-2 my-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-newspaper fa-sm"></i> Actualités
+    </a>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'news') %>">Actualités</a></li>
+      <li><a class="dropdown-item" href="<%= new_post_path %>"> <i class="fa-solid fa-bullhorn fa-sm"></i> Publier un article</a></li>
+  </ul>
+  </div>
+  <div class="dropdown-center">
+    <a class="btn btn-flat mx-2 my-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-bag-shopping fa-sm"></i> Petites annonces
+    </a>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'vente') %>">Vente</a></li>
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'achat') %>">Achat</a></li>
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'don') %>">Don</a></li>
+      <li><a class="dropdown-item" href="<%= posts_path(category: ['vente', 'achat', 'don']) %>">Toutes les annonces</a></li>
+      <li><a class="dropdown-item" href="<%= new_post_path %>"> <i class="fa-solid fa-bullhorn fa-sm"></i> Publier une annonce</a></li>
+  </ul>
+  </div>
+  <%= link_to "/vip", class: "btn btn-flat mx-2 my-2" do %>
+    <i class="fa-solid fa-cogs fa-sm"></i>
+    Administration
+  <% end %>
+</div>
+<hr class="dash">
