@@ -1,15 +1,18 @@
-<div class="form-container">
+<div class="container form-container my-5">
   <%= simple_form_for @post do |f| %>
     <div class="field">
-      <%= f.input :title %>
+      <%= f.input :title, label: "Titre" %>
     </div>
 
     <div class="field">
       <%= f.input :content, as: :rich_text_area, label: false, placeholder: 'Écrivez votre texte' %>
     </div>
-    <div>
-      <%= f.select :category, Post.categories.keys %>
-    </div>
+<div class="form-group d-flex align-items-center">
+  <%= f.label :category, "Catégories:", class: 'col-form-label me-4' %>
+  <%= f.select :category, Post.categories.keys, {}, class: 'form-control' %>
+</div>
+
+
 
     <%= f.submit "Créer le Post", class: "btn btn-flat my-3" %>
   <% end %>
