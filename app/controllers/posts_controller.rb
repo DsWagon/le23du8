@@ -7,14 +7,14 @@ class PostsController < ApplicationController
 
     case params[:category]
     when *valid_categories.map(&:to_s) # Vérifie si la catégorie est valide
-      @posts = Post.where(category: params[:category].to_sym)
+      @posts = Post.where(category: params[:category].to_sym).order(created_at: :desc)
     when "annonces"
-      @posts = Post.where(category: [:vente, :achat, :don])
+      @posts = Post.where(category: [:vente, :achat, :don]).order(created_at: :desc)
     when "actualites"
-      @posts = Post.where(category: [:news])
+      @posts = Post.where(category: [:news]).order(created_at: :desc)
     else
       # Gérer d'autres catégories si nécessaire
-      @posts = Post.where(category: default_category)
+      @posts = Post.where(category: default_category).order(created_at: :desc)
     end
   end
 

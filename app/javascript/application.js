@@ -3,3 +3,11 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+import "trix"
+import "@rails/actiontext"
+
+
+/// Prevents the user from dropping a file into the Trix editor important for security
+document.addEventListener("trix-file-accept", (e) => {
+  e.preventDefault();
+  });
