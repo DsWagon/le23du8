@@ -10,38 +10,33 @@
     <i class="fa-solid fa-file-invoice fa-sm"></i>
     Devis
   <% end %>
-  <%= link_to posts_path(category: "annonces"), class: "btn btn-flat mx-2 my-2" do %>
-    <i class="fa-solid fa-megaphone fa-sm"></i>
-    Annonces
-  <% end %>
-  <%= link_to "Achat", posts_path(category: "achat") %>
-
-  <%= link_to "/posts/new", class: "btn btn-flat mx-2 my-2" do %>
-    <i class="fa-solid fa-bullhorn fa-sm"></i>
-    Publier une annonce
-  <% end %>
+  <div class="dropdown-center">
+    <a class="btn btn-flat mx-2 my-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-bag-shopping fa-sm"></i> Petites annonces
+    </a>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'vente') %>">Vente</a></li>
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'achat') %>">Achat</a></li>
+      <li><a class="dropdown-item" href="<%= posts_path(category: 'don') %>">Don</a></li>
+      <li><a class="dropdown-item" href="<%= new_post_path %>"> <i class="fa-solid fa-bullhorn fa-sm"></i> Publier une annonce</a></li>
+  </ul>
+  </div>
+  <div class="dropdown-center">
+    <a class="btn btn-flat mx-2 my-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-newspaper fa-sm"></i> Articles
+    </a>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="<%= posts_path(category: ['news', 'evenement']) %>">Actualités</a></li>
+      <li><a class="dropdown-item" href="<%= new_post_path %>"> <i class="fa-solid fa-bullhorn fa-sm"></i> Publier un article</a></li>
+  </ul>
+</div>
   <%= link_to "/posts", class: "btn btn-flat mx-2 my-2" do %>
     <i class="fa-solid fa-newspaper fa-sm"></i>
     Articles
-  <% end %>
-  <%= link_to "/publish-article", class: "btn btn-flat mx-2 my-2" do %>
-    <i class="fa-solid fa-pencil fa-sm"></i>
-    Publier un article
   <% end %>
   <%= link_to "/vip", class: "btn btn-flat mx-2 my-2" do %>
     <i class="fa-solid fa-cogs fa-sm"></i>
     Administration
   <% end %>
-  <div class="btn-group">
-  <button type="button" class="btn btn-flat mx-2 my-2">Annonces</button>
-  <button type="button" class="btn btn-flat dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="visually-hidden">Toggle Dropdown</span>
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="<%= posts_path(category: 'vente') %>">Vente</a>
-    <a class="dropdown-item" href="<%= posts_path(category: 'achat') %>">Achat</a>
-    <a class="dropdown-item" href="<%= posts_path(category: 'don') %>">Don</a>
-  </div>
-</div>
 </div>
 <hr class="dash">
