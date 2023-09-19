@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search', to: 'search#index'
   resources :posts do
     resources :commentaries
   end
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
+  get 'search', to: 'search#index'
   get "profile", to: "pages#profile"
   get "legal", to: "pages#legal"
   resources :meetings, only: [:index, :show] do

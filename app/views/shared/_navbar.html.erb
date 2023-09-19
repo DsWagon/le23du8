@@ -1,10 +1,11 @@
 <nav class="navbar bg-body-tertiary fixed-top navbar-background ">
   <div class="container-fluid">
-    <div class="d-flex align-items-end">
+    <div class="d-flex align-items-end flex-grow-1">
       <%= link_to "/", class: "navbar-brand" do %>
         <%= image_tag "content.png" %>
       <% end %>
     </div>
+    <%= render 'search/form' %>
     <button class="btn-switch ms-auto me-2" data-controller="theme-toggle" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch">
       <i class="fa-regular fa-sun fa-lg" data-theme="light"></i>
       <i class="fa-regular fa-moon fa-lg" data-theme="dark"></i>
