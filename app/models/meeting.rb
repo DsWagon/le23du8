@@ -9,4 +9,6 @@ class Meeting < ApplicationRecord
   validates :syndic_id, presence: true
 
 
+
+
 end
