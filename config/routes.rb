@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :posts do
-    resources :commentaries
-  end
 
   authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/admin'
@@ -24,7 +21,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
-  get 'search', to: 'search#index'
   get "profile", to: "pages#profile"
   get "legal", to: "pages#legal"
   resources :meetings, only: [:index, :show] do
@@ -32,6 +28,9 @@ Rails.application.routes.draw do
   resources :flats, only: [:new, :create, :edit, :update] do
   end
   resources :quotes, only: [:index, :show] do
+  end
+  resources :posts do
+    resources :commentaries
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
