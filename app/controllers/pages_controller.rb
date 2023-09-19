@@ -3,10 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.all
-
-  end
-
-  def legal
   end
 
   def profile
@@ -25,4 +21,3 @@ class PagesController < ApplicationController
     end
   end
 end
-
