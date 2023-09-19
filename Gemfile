@@ -10,7 +10,6 @@ gem 'htmlbeautifier' #html beautifier
 gem 'motor-admin' #admin panel
 gem 'cancancan' #authorization
 gem 'i18n' #internationalization
-gem 'pg_search' #search
 
 
 

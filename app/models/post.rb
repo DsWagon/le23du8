@@ -5,10 +5,4 @@ class Post < ApplicationRecord
 
   enum category: [:vente, :achat, :don, :news]
 
-  include PgSearch::Model
-  pg_search_scope :search_category,
-    against: [ :category ],
-    using: {
-      tsearch: { prefix: true }
-    }
 end

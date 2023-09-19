@@ -32,11 +32,4 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
-  include PgSearch::Model
-  pg_search_scope :search_by_title_and_content,
-    against: [ :role ],
-    using: {
-      tsearch: { prefix: true }
-    }
-
 end
