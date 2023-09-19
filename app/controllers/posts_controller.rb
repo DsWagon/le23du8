@@ -5,6 +5,14 @@ class PostsController < ApplicationController
     valid_categories = [:vente, :achat, :don, :news]
     default_category = [:vente, :achat, :don]
 
+    if params[:query].present?
+      @posts = Post.where(category: params[:query]).order(created_at: :desc)
+    elsif params[:category].in?(valid_categories.map(&:to_s))
+      @posts = Post.where(category: params[:category]).order(created_at: :desc)
+    else
+      @posts = Post.where(category: default_category).order(created_at: :desc)
+    end
+
     case params[:category]
     when *valid_categories.map(&:to_s) # Vérifie si la catégorie est valide
       @posts = Post.where(category: params[:category].to_sym).order(created_at: :desc)
