@@ -2,6 +2,7 @@
     <div class="col-md-9 flex-column">
       <div class="row">
         <% @posts.each do |post| %>
+          <% if post.news? %>
           <div class="col-md-12 mb-12 card-view">
             <div class="card">
               <div class="card-header">
@@ -23,6 +24,7 @@
               </div>
             </div>
           </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -33,5 +35,33 @@
         <p class="text-center">Votre rôle : <%= current_user.role %></p>
       <% end %>
       <hr class="dash">
+      <div class="row">
+        <% @posts.each do |post| %>
+          <% unless post.news? %>
+          <div class="col-md-12 mb-12 card-view">
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <h3 class="text-center"><%= post.category %></h3>
+                  <div class="col">
+                    <%= post.title %>
+                  </div>
+                  <div class="col">
+                    <p>Par : <%= post.user.first_name %> <%= post.user.last_name %>   Créé le : <%= post.created_at.strftime('%d %B %Y à %H:%M') %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><%= post.content %></p>
+                <div class="card-end">
+                  <%= link_to "Lire", post_path(post), class: "btn btn-flat" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     </div>
   </div>
