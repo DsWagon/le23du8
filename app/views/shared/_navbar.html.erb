@@ -1,8 +1,10 @@
 <nav class="navbar bg-body-tertiary fixed-top navbar-background ">
   <div class="container-fluid">
     <div class="d-flex align-items-end flex-grow-1">
-      <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag "content.png" %>
+      <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+        <%= link_to "/", class: "navbar-brand" do %>
+          <%= image_tag "content.png" %>
+        <% end %>
       <% end %>
     </div>
     <button class="btn-switch ms-auto me-2" data-controller="theme-toggle" data-action="click->theme-toggle#toggleTheme" data-target="theme-toggle.btnSwitch">
