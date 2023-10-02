@@ -14,12 +14,8 @@
           </div>
         <div class="card-end">
           <p class="text-muted"><%= link_to "Retour à la liste des posts", posts_path %></p>
-            <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fa-solid fa-trash fa-lg circle-icon-delete mx-1" style="color: #e7081f;"></i>
-            <% end %>
-            <%= link_to edit_post_path(@post) do %>
-              <i class="fa-solid fa-edit fa-lg circle-icon-edit mx-1" style="color: #fd7e14;"></i>
-            <% end %>
+            <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %><i class="fa-solid fa-trash fa-lg circle-icon-delete mx-1" style="color: #e7081f;"></i><% end %>
+            <%= link_to edit_post_path(@post) do %><i class="fa-solid fa-edit fa-lg circle-icon-edit mx-1" style="color: #fd7e14;"></i><% end %>
         </div>
       </div>
     </div>
@@ -35,10 +31,12 @@
           <small><em class="text-muted"><%= commentary.user.first_name %></em></small>
           <small><em class="text-muted">il y a <%= distance_of_time_in_words_to_now(commentary.created_at) %></em></small>
           <p class="mb-0"><%= commentary.content %></p>
-            <%= link_to [@post, commentary], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
-            <% end %>
-            <%= link_to "Éditer ce commentaire", edit_post_commentary_path(@post, commentary) %>
+            <div class="d-flex justify-content-end">
+
+              <%= link_to [@post, commentary], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %><i class="fa-solid fa-trash fa-lg circle-icon-delete mx-1" style="color: #e7081f;"></i><% end %>
+              <%= link_to edit_post_commentary_path(@post, commentary) do %><i class="fa-solid fa-edit fa-lg circle-icon-edit mx-1" style="color: #fd7e14;"></i><% end %>
+            </div>
+
         </div>
         <hr class="my-3">
       <% end %>

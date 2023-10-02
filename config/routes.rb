@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   authenticated :user, ->(user) { user.admin? } do
     mount Motor::Admin => '/admin'
     get "admin", to: "pages#admin"
+    resources :quotes
     resources :meetings do
     end
     resources :flats, only: [:new, :create, :edit, :update] do
     end
-    resources :quotes
     resources :posts do
       resources :commentaries
     end
@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 
   authenticated :user, ->(user) { user.vip? } do
     get "vip", to: "pages#vip"
-    resources :meetings do
-    end
+    resources :quotes
+    resources :meetings
     resources :flats, only: [:new, :create, :edit, :update] do
     end
     resources :posts do

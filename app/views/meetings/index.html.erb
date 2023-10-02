@@ -56,14 +56,14 @@
         <td><%= meeting.date %></td>
         <td><%= meeting.syndic.name %></td>
         <td style="text-align: center; vertical-align: middle;">
-          <%= link_to edit_meeting_path(meeting) do %>
-            <i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i>
-          <% end %>
+        <div>
+          <%= link_to edit_meeting_path(meeting) do %><i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i><% end %>
+        </div>
         </td>
         <td style="text-align: center; vertical-align: middle;">
-          <%= link_to meeting_path(meeting), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-            <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
-          <% end %>
+        <div>
+          <%= link_to meeting_path(meeting), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %><i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i><% end %>
+        </div>
         </td>
       </tr>
     <% end %>

@@ -10,9 +10,6 @@
   <%= f.label :category, "Catégories:", class: 'col-form-label me-4' %>
   <%= f.select :category, Post.categories.keys, {}, class: 'form-control' %>
 </div>
-
-
-
     <%= f.submit "Créer le Post", class: "btn btn-flat my-3" %>
   <% end %>
 </div>
