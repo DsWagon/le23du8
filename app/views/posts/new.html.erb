@@ -12,6 +12,8 @@
       <div class="form-group d-flex align-items-center">
         <%= f.label :category, "Catégories:", class: 'col-form-label me-4' %>
         <%= f.select :category, Post.categories.keys, {}, class: 'form-control' %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
       </div>
         <%= f.submit "Publier", class: "btn btn-flat my-3" %>
       <% end %>
