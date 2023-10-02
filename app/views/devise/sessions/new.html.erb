@@ -1,9 +1,9 @@
 <div class="container form-container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-6">
-      <h2 style="text-align:center;">Bienvenue sur <strong>Le23du8</strong></h2>
-      <h2 style="text-align:center;">Se connecter</h2>
-
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <%= image_tag "contentle23du8.png", style: "width: 70%;" %>
+    </div>
+    <div class="col-md-6">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs mt-5">
@@ -18,9 +18,8 @@
                       input_html: { placeholder: "Mot de passe", autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean, label: "Se souvenir de moi" if devise_mapping.rememberable? %>
         </div>
-
         <div class="form-actions">
-          <%= button_tag type: 'submit', class: "btn btn-flat" do %>Se connecter<% end %>
+          <%= button_tag type: 'submit', class: "btn btn-rounded" do %>Se connecter<% end %>
         </div>
       <% end %>
       <div class="form-margin">

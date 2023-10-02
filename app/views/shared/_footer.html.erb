@@ -1,13 +1,15 @@
 <div class="footer">
     <div class="row mt-2 d-flex justify-content-center align-items-center flex-wrap p-2">
       <div class="col-md-2 col-sm-12 p-0">
-        <%= link_to "/", class: "footer-brand" do %>
-          <%= image_tag "content.png" %>
+        <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+          <%= link_to "/", class: "footer-brand" do %>
+            <%= image_tag "content.png" %>
+          <% end %>
         <% end %>
       </div>
       <div class="col-md-8 col-sm-12 text-center">
         <div>
-          © 2023 Le23du8 DsL. Tous droits réservés
+          © 2023 Le23du8 Tous droits réservés
         </div>
         <div class="mt-2">
           <a href="mailto:serrada@gmail.com" class="btn-back">
