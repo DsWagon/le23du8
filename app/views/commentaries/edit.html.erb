@@ -1,0 +1,8 @@
+<div class="form-container">
+  <%= form_for [@post, @commentary] do |f| %>
+  <div class="form-control">
+    <%= f.rich_text_area :content %>
+    <%= f.submit "Mettre à jour le commentaire", class: "btn btn-flat mt-2" %>
+  </div>
+  <% end %>
+</div>

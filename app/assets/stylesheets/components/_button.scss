@@ -119,3 +119,24 @@
 .dropdown-item:hover {
   background-color: $turquoise;
 }
+
+
+.alert-info {
+  background-color: $turquoise;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.alert-warning {
+  background-color: $turquoise;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 11px;
+}

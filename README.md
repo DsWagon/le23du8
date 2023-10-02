@@ -1,4 +1,5 @@
 # TODO_list
+- alert info modif (auto close with js + css modif)
 
 # priorité
 - [ ] vérifier si le site fonctionne sur heroku

@@ -66,12 +66,12 @@
           <td><%= quote.price %> €</td>
           <td style="text-align: center; vertical-align: middle;">
             <%= link_to edit_quote_path(quote) do %>
-              <i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i>
+            <i class="fa-solid fa-edit fa-lg circle-icon-edit" style="color: #fd7e14;"></i>
             <% end %>
           </td>
           <td style="text-align: center; vertical-align: middle;">
             <%= link_to quote_path(quote), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
+            <i class="fa-solid fa-trash fa-lg circle-icon-delete" style="color: #e7081f;"></i>
             <% end %>
           </td>
         </tr>

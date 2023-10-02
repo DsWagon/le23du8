@@ -1,23 +1,21 @@
 <div class="container form-container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-6">
-      <h2 style="text-align:center;">Création de réunion</h2>
-      <%= simple_form_for(@meeting) do |f|  %>
-        <div class="form-group mt-3">
-          <%= f.label :Titre %>
-          <%= f.text_field :title, class: "form-control" %>
+    <div class="col-12 col-md-10">
+
+      <h2 style="text-align:center;" class="highlight">Création de réunion</h2>
+      <%= simple_form_for @meeting do |f|  %>
+        <div class="field mt-3">
+          <%= f.input :title, as: :string, placeholder: "Titre", label: false %>
         </div>
-        <div class="form-group mt-3">
-          <%= f.label :Description %>
-          <%= f.text_area :description, class: "form-control" %>
+        <div class="field mt-3">
+          <%= f.input :description, as: :rich_text_area, class: "form-control", label: false, placeholder: "Écrivez votre texte ici" %>
         </div>
-        <div class="form-group mt-3">
-          <%= f.label :Date %>
+        <div class="field mt-3">
           <%= f.date_field :date, class: "form-control" %>
         </div>
-        <div class="form-group mt-3">
-          <%= f.label :Syndic %>
-          <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-control" %>
+        <div class="field mt-3">
+          <%= f.label :Syndic, label: "Syndic : " %>
+          <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-collection" %>
         </div>
         <div class="form-margin">
           <div class="form-actions">

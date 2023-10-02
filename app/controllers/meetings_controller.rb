@@ -1,6 +1,4 @@
 class MeetingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show, :new, :create, :edit, :update]
-
   def index
     @meetings = Meeting.all
     @meetings = Meeting.all.order(date: :desc)
@@ -11,11 +9,11 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    meeting = Meeting.new(meeting_params)
-    if meeting.save
-      redirect_to meeting_path(meeting)
+    @meeting = Meeting.new(meeting_params)
+    if @meeting.save
+      redirect_to meeting_path(@meeting)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
