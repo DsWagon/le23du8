@@ -66,9 +66,11 @@
       </div>
     </div>
   <% else %>
+    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
       <%= link_to new_user_session_path, class: "nav-link btn btn-flat" do %>
       <i class="fa-solid fa-right-to-bracket fa-lg"></i>
       Se connecter
+      <% end %>
     <% end %>
   <% end %>
   </div>
