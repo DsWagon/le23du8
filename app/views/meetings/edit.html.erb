@@ -1,7 +1,7 @@
 <div class="container form-container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10">
-      <h2 style="text-align:center;w">Éditer la réunion</h2>
+      <h2 style="text-align:center;" class="highlight">Éditer la réunion</h2>
       <%= simple_form_for @meeting do |f|  %>
         <div class="field mt-3">
           <%= f.input :title, as: :string, placeholder: "Titre", label: false, required: true %>
