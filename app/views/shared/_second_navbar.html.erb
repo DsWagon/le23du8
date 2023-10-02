@@ -33,9 +33,16 @@
         <li><a class="dropdown-item" href="<%= new_post_path %>"> <i class="fa-solid fa-bullhorn fa-sm"></i> Publier une annonce</a></li>
     </ul>
     </div>
-    <%= link_to "/vip", class: "btn btn-flat mx-2 my-2" do %>
-      <i class="fa-solid fa-cogs fa-sm"></i>
-      Administration
+     <% if current_user.admin? %>
+        <%= link_to "/admin", class: "btn btn-flat" do %>
+          <i class="fa-solid fa-gear fa-lg me-2"></i>
+          SuperAdministration
+        <% end %>
+      <% elsif current_user.vip? %>
+        <%= link_to "/vip", class: "btn btn-flat" do %>
+          <i class="fa-solid fa-gears fa-lg me-2"></i>
+          Administration
+        <% end %>
     <% end %>
   </div>
   <hr class="dash">
