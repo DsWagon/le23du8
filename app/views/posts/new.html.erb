@@ -1,15 +1,17 @@
 <div class="container form-container my-5">
-  <%= simple_form_for @post do |f| %>
-    <div class="field">
-      <%= f.input :title, label: false, placeholder: 'Titre', required: true %>
+  <div class="col-12 col-md-10">
+    <%= simple_form_for @post do |f| %>
+      <div class="field">
+        <%= f.input :title, label: false, placeholder: 'Titre', required: true %>
+      </div>
+      <div class="field">
+        <%= f.input :content, as: :rich_text_area, label: false, placeholder: 'Écrivez votre texte ici' %>
+      </div>
+    <div class="form-group d-flex align-items-center">
+      <%= f.label :category, "Catégories:", class: 'col-form-label me-4' %>
+      <%= f.select :category, Post.categories.keys, {}, class: 'form-control' %>
     </div>
-    <div class="field">
-      <%= f.input :content, as: :rich_text_area, label: false, placeholder: 'Écrivez votre texte ici' %>
-    </div>
-<div class="form-group d-flex align-items-center">
-  <%= f.label :category, "Catégories:", class: 'col-form-label me-4' %>
-  <%= f.select :category, Post.categories.keys, {}, class: 'form-control' %>
-</div>
-    <%= f.submit "Créer le Post", class: "btn btn-flat my-3" %>
-  <% end %>
+      <%= f.submit "Créer le Post", class: "btn btn-flat my-3" %>
+    <% end %>
+  </div>
 </div>

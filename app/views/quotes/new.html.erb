@@ -1,27 +1,31 @@
 <div class="container form-container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-6">
-      <h2 style="text-align:center;">Création de devis</h2>
-      <%= simple_form_for(@quote) do |f| %>
+    <div class="col-12 col-md-10">
+      <h2 style="text-align:center;" class="highlight">Création de devis</h2>
+      <%= simple_form_for @quote do |f| %>
         <div class="form-group mt-3">
-          <%= f.label :Entreprise %>
-          <%= f.text_field :company_name, class: "form-control" %>
+          <%= f.text_field :company_name, class: "form-control", label: "Entreprise", placeholder: "Nom de l'entreprise", required: true %>
         </div>
         <div class="form-group mt-3">
-          <%= f.label :Description %>
-          <%= f.text_area :description, class: "form-control" %>
+          <%= f.input :description, as: :rich_text_area, class: "form-control", required: true %>
         </div>
         <div class="form-group mt-3">
           <%= f.label :Prix %>
-          <%= f.number_field :price, class: "form-control" %>
+          <%= f.input :price, as: :integer, class: "form-control", required: true, label: false %>
         </div>
-        <div class="form-group mt-3">
-          <%= f.label :Date_de_début %>
-          <%= f.date_field :date_start, class: "form-control" %>
-        </div>
-        <div class="form-group mt-3">
-          <%= f.label :Date_de_fin %>
-          <%= f.date_field :date_end, class: "form-control" %>
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-6 column">
+            <div class="form-group mt-3">
+              <%= f.label :Date_de_début %>
+              <%= f.date_field :date_start, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-6 column">
+            <div class="form-group mt-3">
+              <%= f.label :Date_de_fin %>
+              <%= f.date_field :date_end, class: "form-control" %>
+            </div>
+          </div>
         </div>
         <div class="form-group mt-3">
           <%= f.label :Réunion %>

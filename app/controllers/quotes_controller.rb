@@ -1,6 +1,4 @@
 class QuotesController < ApplicationController
-  load_and_authorize_resource
-
   def index
     @quotes = Quote.includes(:meeting).order("meetings.id DESC")
   end
@@ -10,11 +8,11 @@ class QuotesController < ApplicationController
   end
 
   def create
-    quote = Quote.new(quote_params)
-    if quote.save
-      redirect_to quote_path(quote)
+    @quote = Quote.new(quote_params)
+    if @quote.save
+      redirect_to quote_path(@quote)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

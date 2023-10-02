@@ -1,25 +1,28 @@
 <div class="container form-container">
   <div class="row justify-content-center">
-    <h2 style="text-align:center;">Création de réunion</h2>
-    <%= simple_form_for @meeting do |f|  %>
-      <div class="field mt-3">
-        <%= f.input :title, as: :string, placeholder: "Titre", label: false %>
-      </div>
-      <div class="field mt-3">
-        <%= f.input :description, as: :rich_text_area, class: "form-control", label: false, placeholder: "Écrivez votre texte ici" %>
-      </div>
-      <div class="field mt-3">
-        <%= f.date_field :date, class: "form-control" %>
-      </div>
-      <div class="field mt-3">
-        <%= f.label :Syndic, label: "Syndic : " %>
-        <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-collection" %>
-      </div>
-      <div class="form-margin">
-        <div class="form-actions">
-          <%= f.submit "Créer la réunion", class: "btn btn-flat" %>
+    <div class="col-12 col-md-10">
+
+      <h2 style="text-align:center;">Création de réunion</h2>
+      <%= simple_form_for @meeting do |f|  %>
+        <div class="field mt-3">
+          <%= f.input :title, as: :string, placeholder: "Titre", label: false %>
         </div>
-      </div>
-    <% end %>
+        <div class="field mt-3">
+          <%= f.input :description, as: :rich_text_area, class: "form-control", label: false, placeholder: "Écrivez votre texte ici" %>
+        </div>
+        <div class="field mt-3">
+          <%= f.date_field :date, class: "form-control" %>
+        </div>
+        <div class="field mt-3">
+          <%= f.label :Syndic, label: "Syndic : " %>
+          <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-collection" %>
+        </div>
+        <div class="form-margin">
+          <div class="form-actions">
+            <%= f.submit "Créer la réunion", class: "btn btn-flat" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
