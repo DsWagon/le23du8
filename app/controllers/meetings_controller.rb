@@ -9,11 +9,11 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    meeting = Meeting.new(meeting_params)
-    if meeting.save
-      redirect_to meeting_path(meeting)
+    @meeting = Meeting.new(meeting_params)
+    if @meeting.save
+      redirect_to meeting_path(@meeting)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

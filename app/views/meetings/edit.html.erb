@@ -1,30 +1,24 @@
 <div class="container form-container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-6">
-      <h2 style="text-align:center;">Éditer la réunion</h2>
-      <%= simple_form_for(@meeting) do |f|  %>
-        <div class="form-group mt-3">
-          <%= f.label :Titre %>
-          <%= f.text_field :title, class: "form-control" %>
+    <h2 style="text-align:center;">Éditer la réunion</h2>
+    <%= simple_form_for @meeting do |f|  %>
+      <div class="field mt-3">
+        <%= f.input :title, as: :string, placeholder: "Titre", label: false, required: true %>
+      </div>
+      <div class="field mt-3">
+        <%= f.input :description, as: :rich_text_area, label: false, placeholder: "Écrivez votre texte ici", required: true %>
+      </div>
+      <div class="field mt-3">
+        <%= f.date_field :date, class: "form-control" %>
+      </div>
+      <div class="field mt-3">
+        <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-control" %>
+      </div>
+      <div class="form-margin">
+        <div class="form-actions">
+          <%= f.submit "Modifier la réunion", class: "btn btn-flat" %>
         </div>
-        <div class="form-group mt-3">
-          <%= f.label :Description %>
-          <%= f.text_area :description, class: "form-control" %>
-        </div>
-        <div class="form-group mt-3">
-          <%= f.label :Date %>
-          <%= f.date_field :date, class: "form-control" %>
-        </div>
-        <div class="form-group mt-3">
-          <%= f.label :Syndic %>
-          <%= f.collection_select :syndic_id, Syndic.all, :id, :name, prompt: "Sélectionnez un syndic", class: "form-control" %>
-        </div>
-        <div class="form-margin">
-          <div class="form-actions">
-            <%= f.submit "Modifier la réunion", class: "btn btn-flat" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
