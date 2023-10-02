@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :flats, only: [:new, :create, :edit, :update] do
     end
     resources :quotes
+    resources :posts do
+      resources :commentaries
+    end
   end
 
   authenticated :user, ->(user) { user.vip? } do
@@ -16,7 +19,9 @@ Rails.application.routes.draw do
     end
     resources :flats, only: [:new, :create, :edit, :update] do
     end
-    resources :quotes
+    resources :posts do
+      resources :commentaries
+    end
   end
 
   devise_for :users
